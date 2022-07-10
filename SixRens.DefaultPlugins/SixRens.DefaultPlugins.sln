@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixRens.DefaultPlugins", "SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj", "{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "控制台效果测试", "控制台效果测试\控制台效果测试.csproj", "{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传打表式三传表生成器", "三传打表式三传表生成器\三传打表式三传表生成器.csproj", "{8E8D0F30-29F6-4991-B073-94B889AF3E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传生成检测", "三传生成检测\三传生成检测.csproj", "{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传变化测试", "三传变化测试\三传变化测试.csproj", "{DC7810B6-6E56-4501-B453-4692BB041CC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E8D0F30-29F6-4991-B073-94B889AF3E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E8D0F30-29F6-4991-B073-94B889AF3E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E8D0F30-29F6-4991-B073-94B889AF3E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E8D0F30-29F6-4991-B073-94B889AF3E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {614EDF59-0798-499A-8FAE-23E4FF6AB168}
+	EndGlobalSection
+EndGlobal
