@@ -7,7 +7,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.式.三传实现
 {
-    internal partial class 三传依深浅实现计算式
+    internal partial class 三传实现
     {
         internal void 重新计算()
         {

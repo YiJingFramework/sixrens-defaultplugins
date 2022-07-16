@@ -6,7 +6,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.神煞
 {
-    internal sealed class 神煞示例实现 : I神煞表
+    internal sealed class 神煞默认实现 : I神煞表
     {
         private sealed record 壬式(I年月日时 年月日时);
 
@@ -88,7 +88,7 @@ namespace SixRens.DefaultPlugins.神煞
 
         private static readonly IReadOnlyDictionary<string, 取神煞法> 取神煞法列表;
 
-        static 神煞示例实现()
+        static 神煞默认实现()
         {
             取神煞法列表 = typeof(取神煞方法).GetProperties().ToDictionary(
                 (p) => p.Name,
@@ -102,7 +102,7 @@ namespace SixRens.DefaultPlugins.神煞
 
         private readonly 壬式 式;
 
-        public 神煞示例实现(I年月日时 年月日时)
+        public 神煞默认实现(I年月日时 年月日时)
         {
             式 = new(年月日时);
         }

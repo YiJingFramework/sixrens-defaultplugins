@@ -11,6 +11,7 @@ using SixRens.扩展;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 using 三传打表式三传表生成器;
+using 三传打表式三传表生成器.三传取法;
 
 int GenerateKey(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
 {
@@ -34,10 +35,10 @@ for (int i = 0; i < 60; i++)
     {
         I年月日时 年月日时 = new 虚假年月日时(lunar, new EarthlyBranch(j));
         var 式 = new 壬式(年月日时,
-                new 地盘直用基础盘(),
-                new 天盘月将加子(),
-                new 四课日上上(),
-                new 三传依深浅(),
+                new 地盘默认(),
+                new 天盘月将加时(),
+                new 四课默认(),
+                new 三传插件(),
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
                 Array.Empty<I神煞插件>());
 

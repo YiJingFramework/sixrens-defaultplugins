@@ -3,7 +3,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.式.三传实现
 {
-    internal partial class 三传依深浅实现打表式
+    internal partial class 三传涉害深浅实现打表式
     {
         private static int 生成键(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
         {
@@ -132,9 +132,7 @@ namespace SixRens.式.三传实现
                 101002 => (12, 1, 2),
                 101003 => (2, 4, 6),
                 101004 => (5, 8, 11),
-#warning 不是计算得出（癸酉日辰加子）
-                101005 => (6, 10, 2),
-                // 101005 => (10, 2, 6),
+                101005 => (10, 2, 6),
                 101006 => (8, 1, 6),
                 101007 => (4, 10, 4),
                 101008 => (12, 7, 2),
@@ -206,9 +204,7 @@ namespace SixRens.式.三传实现
                 60402 => (5, 6, 7),
                 60403 => (12, 2, 4),
                 60404 => (10, 1, 4),
-#warning 不是计算得出（己卯日辰加子）
-                60405 => (8, 12, 4),
-                // 60405 => (12, 4, 8),
+                60405 => (12, 4, 8),
                 60406 => (6, 11, 4),
                 60407 => (4, 10, 4),
                 60408 => (11, 6, 1),

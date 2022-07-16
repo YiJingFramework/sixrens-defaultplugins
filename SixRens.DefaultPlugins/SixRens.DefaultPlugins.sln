@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixRens.DefaultPlugins", "SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj", "{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SixRens.DefaultPlugins", "SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj", "{4DBBF792-07D6-4B1F-A7BD-9C455CA49645}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "控制台效果测试", "控制台效果测试\控制台效果测试.csproj", "{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "控制台效果测试", "控制台效果测试\控制台效果测试.csproj", "{207DCAF2-758E-4D4E-A75A-BFC318AE8B15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传打表式三传表生成器", "三传打表式三传表生成器\三传打表式三传表生成器.csproj", "{8E8D0F30-29F6-4991-B073-94B889AF3E49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "三传打表式三传表生成器", "三传打表式三传表生成器\三传打表式三传表生成器.csproj", "{8E8D0F30-29F6-4991-B073-94B889AF3E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传生成检测", "三传生成检测\三传生成检测.csproj", "{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "三传生成检测", "三传生成检测\三传生成检测.csproj", "{35A5820F-4CD6-4542-9AE9-F47A9441BEF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三传变化测试", "三传变化测试\三传变化测试.csproj", "{DC7810B6-6E56-4501-B453-4692BB041CC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "三传变化测试", "三传变化测试\三传变化测试.csproj", "{DC7810B6-6E56-4501-B453-4692BB041CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "三传", "三传", "{91764EC1-0F55-42A9-8EB9-42D0E7285B1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E8D0F30-29F6-4991-B073-94B889AF3E49} = {91764EC1-0F55-42A9-8EB9-42D0E7285B1C}
+		{35A5820F-4CD6-4542-9AE9-F47A9441BEF2} = {91764EC1-0F55-42A9-8EB9-42D0E7285B1C}
+		{DC7810B6-6E56-4501-B453-4692BB041CC0} = {91764EC1-0F55-42A9-8EB9-42D0E7285B1C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {614EDF59-0798-499A-8FAE-23E4FF6AB168}

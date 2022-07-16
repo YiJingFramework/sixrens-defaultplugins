@@ -10,6 +10,7 @@ using SixRens.DefaultPlugins.天盘;
 using SixRens.扩展;
 using YiJingFramework.StemsAndBranches;
 using 三传变化测试;
+using 三传变化测试.三传取法;
 
 namespace Test
 {
@@ -31,10 +32,10 @@ namespace Test
                 {
                     I年月日时 年月日时 = new 虚假年月日时(lunar, new EarthlyBranch(j));
                     var 式 = new 壬式(年月日时,
-                        new 地盘直用基础盘(),
-                        new 天盘月将加子(),
-                        new 四课日上上(),
-                        new 三传依深浅(),
+                        new 地盘默认(),
+                        new 天盘月将加时(),
+                        new 四课默认(),
+                        new 三传插件(),
                         new 天将甲戊庚牛羊壬癸蛇兔藏(),
                         Array.Empty<I神煞插件>());
 
