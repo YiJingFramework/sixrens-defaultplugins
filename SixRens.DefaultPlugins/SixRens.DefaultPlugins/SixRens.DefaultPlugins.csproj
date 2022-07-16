@@ -8,7 +8,7 @@
     <Company>YiJingFramework</Company>
     <Product>SixRens.DefaultPlugins</Product>
     <PackageId>SixRens.DefaultPlugins</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/YiJingFramework/sixrens-defaultplugins.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SixRens.Api" Version="1.4.0" />
+    <PackageReference Include="SixRens.Api" Version="1.5.0" />
   </ItemGroup>
 
 </Project>

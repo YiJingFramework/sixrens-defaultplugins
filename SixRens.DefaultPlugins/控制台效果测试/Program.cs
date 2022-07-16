@@ -6,8 +6,12 @@ using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
+using SixRens.DefaultPlugins.年命;
 using SixRens.DefaultPlugins.神煞;
+using SixRens.DefaultPlugins.课体;
+using SixRens.实体;
 using SixRens.扩展;
+using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
 
 namespace 控制台效果测试
@@ -17,26 +21,39 @@ namespace 控制台效果测试
         private const string 空格 = "　";
         private static void 试打印神煞(壬式 壬式)
         {
-            foreach (var 神煞表 in 壬式.神煞表)
-                foreach (var 神煞 in 神煞表.支持的神煞)
-                    Console.WriteLine($"{神煞}：{神煞表[神煞]:C}");
+            foreach (var 神煞 in 壬式.神煞)
+            {
+                var 神 = string.Join(空格, 神煞.所在神.Select(神 => 神.ToString("C")));
+                Console.WriteLine($"{神煞.神煞名}：{神}");
+            }
+            Console.WriteLine();
+        }
+        private static void 打印课体(壬式 壬式)
+        {
+            Console.WriteLine(string.Join(空格, 壬式.课体.Select(体 => 体.课体名)));
             Console.WriteLine();
         }
         public static void Main()
         {
             var time = new DateTime(2022, 2, 24, 22, 00, 0);
-            I年月日时 年月日时 = new 真实年月日时(time);
+            I年月日时信息 年月日时 = new 真实年月日时(time);
             壬式 壬式 = new 壬式(年月日时,
+                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
+                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
                 new 地盘默认(),
                 new 天盘月将加时(),
                 new 四课默认(),
                 new 三传涉害深浅(),
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
-                new[] { new 神煞默认() });
+                new 年命默认(),
+                new[] { new 神煞测试() },
+                new[] { new 课体测试() });
             打印年月日时(壬式);
+            打印年命(壬式);
             打印三传(壬式);
             打印四课(壬式);
             打印天盘(壬式);
+            打印课体(壬式);
             试打印神煞(壬式);
             _ = Console.ReadLine();
         }
@@ -50,6 +67,22 @@ namespace 控制台效果测试
             Console.WriteLine($"{年月日时.旬所在.旬首干:C}{年月日时.旬所在.旬首支:C}旬{空格}" +
                 $"{年月日时.旬所在.空亡一:C}{年月日时.旬所在.空亡二:C}空{空格}" +
                 $"{年月日时.月将:C}将");
+            Console.WriteLine();
+        }
+        private static void 打印年命(壬式 壬式)
+        {
+            string 转字符串(I年命 年命)
+            {
+                return $"{(年命.性别.IsYang ? '男' : '女')}{年命.本命:C}命{年命.行年:C}年";
+            }
+            var 课主 = 壬式.课主年命;
+            if(课主 is not null)
+                Console.WriteLine($"课主{空格}{转字符串(课主)}");
+            if (壬式.对象年命.Count != 0)
+            {
+                var 年命字符串表 = 壬式.对象年命.Select(年命 => 转字符串(年命));
+                Console.WriteLine($"对象{空格}{string.Join(空格, 年命字符串表)}");
+            }
             Console.WriteLine();
         }
         private static void 打印三传(壬式 壬式)

@@ -7,6 +7,8 @@ using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
+using SixRens.DefaultPlugins.年命;
+using SixRens.实体;
 using SixRens.扩展;
 using YiJingFramework.StemsAndBranches;
 using 三传变化测试;
@@ -30,14 +32,18 @@ namespace Test
             {
                 for (int j = 1; j <= 12; j++)
                 {
-                    I年月日时 年月日时 = new 虚假年月日时(lunar, new EarthlyBranch(j));
+                    I年月日时信息 年月日时 = new 真实年月日时(lunar).修改信息(new EarthlyBranch(j));
                     var 式 = new 壬式(年月日时,
+                        null,
+                        Array.Empty<本命信息>(),
                         new 地盘默认(),
                         new 天盘月将加时(),
                         new 四课默认(),
                         new 三传插件(),
                         new 天将甲戊庚牛羊壬癸蛇兔藏(),
-                        Array.Empty<I神煞插件>());
+                        new 年命默认(),
+                        Array.Empty<I神煞插件>(),
+                        Array.Empty<I课体插件>());
 
                     var fileName = $"SixRens结果_{count.ToString().PadLeft(3, '0')}{年月日时.日干:C}{年月日时.日支:C}{年月日时.月将:C}.txt";
                     count++;

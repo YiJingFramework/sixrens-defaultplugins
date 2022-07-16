@@ -6,7 +6,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.神煞
 {
-    internal sealed class 神煞默认实现 : I神煞表
+    internal sealed class 神煞测试实现
     {
         private sealed record 壬式(I年月日时 年月日时);
 
@@ -88,7 +88,7 @@ namespace SixRens.DefaultPlugins.神煞
 
         private static readonly IReadOnlyDictionary<string, 取神煞法> 取神煞法列表;
 
-        static 神煞默认实现()
+        static 神煞测试实现()
         {
             取神煞法列表 = typeof(取神煞方法).GetProperties().ToDictionary(
                 (p) => p.Name,
@@ -102,24 +102,24 @@ namespace SixRens.DefaultPlugins.神煞
 
         private readonly 壬式 式;
 
-        public 神煞默认实现(I年月日时 年月日时)
+        public 神煞测试实现(I年月日时 年月日时)
         {
             式 = new(年月日时);
         }
 
-        public EarthlyBranch? this[string 神煞名]
+        private sealed record 神煞(
+            string 神煞名,
+            IReadOnlyList<EarthlyBranch> 所在神) : I神煞
+        { }
+        public IEnumerable<I神煞> 取煞()
         {
-            get
+            foreach (var (神煞名, 取法) in 取神煞法列表)
             {
-                return 取神煞法列表[神煞名](式);
-            }
-        }
-
-        public IEnumerable<string> 支持的神煞
-        {
-            get
-            {
-                return 取神煞法列表.Keys;
+                var 神 = 取法(this.式);
+                if (神.HasValue)
+                    yield return new 神煞(神煞名, Array.AsReadOnly(new[] { 神.Value }));
+                else
+                    yield return new 神煞(神煞名, Array.Empty<EarthlyBranch>());
             }
         }
     }
