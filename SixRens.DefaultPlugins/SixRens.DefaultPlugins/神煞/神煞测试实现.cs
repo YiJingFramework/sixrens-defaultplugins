@@ -1,5 +1,4 @@
 ﻿using SixRens.Api.实体;
-using SixRens.Api.实体.壬式;
 using SixRens.Api.工具;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
@@ -115,7 +114,7 @@ namespace SixRens.DefaultPlugins.神煞
         {
             foreach (var (神煞名, 取法) in 取神煞法列表)
             {
-                var 神 = 取法(this.式);
+                var 神 = 取法(式);
                 if (神.HasValue)
                     yield return new 神煞(神煞名, Array.AsReadOnly(new[] { 神.Value }));
                 else

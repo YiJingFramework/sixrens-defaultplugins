@@ -17,11 +17,11 @@ namespace SixRens.DefaultPlugins.工具
 
         public EarthlyBranch 取所乘神(EarthlyBranch 下者)
         {
-            return this.天盘.获取同位支(this.地盘, 下者);
+            return 天盘.获取同位支(地盘, 下者);
         }
         public EarthlyBranch 取所临神(EarthlyBranch 上者)
         {
-            return this.地盘.获取同位支(this.天盘, 上者);
+            return 地盘.获取同位支(天盘, 上者);
         }
     }
 }

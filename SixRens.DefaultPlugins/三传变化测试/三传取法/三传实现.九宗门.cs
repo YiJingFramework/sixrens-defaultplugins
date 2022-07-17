@@ -31,16 +31,16 @@ namespace SixRens.式.三传实现
             switch (不重复原序课.Count)
             {
                 case 4:
-                    this.四课皆备(四课);
+                    四课皆备(四课);
                     break;
                 case 3:
-                    this.还有三课(四课, 不重复原序课);
+                    还有三课(四课, 不重复原序课);
                     break;
                 case 2:
-                    this.止有两课(四课);
+                    止有两课(四课);
                     break;
                 default:
-                    this.唯有一课(四课);
+                    唯有一课(四课);
                     break;
             }
         }
@@ -52,10 +52,10 @@ namespace SixRens.式.三传实现
 
             {
                 // 贼克系列
-                var 贼克者 = this.取贼或无贼取克(四课, out bool 有贼否);
+                var 贼克者 = 取贼或无贼取克(四课, out bool 有贼否);
                 if (贼克者.Count is 1)
                 {
-                    this.以初传其乘再乘设三传(贼克者.Single().上);
+                    以初传其乘再乘设三传(贼克者.Single().上);
                     return;
                 }
                 if (贼克者.Count is not 0)
@@ -63,34 +63,34 @@ namespace SixRens.式.三传实现
                     Debug.Assert(贼克者.Count is 2 or 3 or 4);
 
                     IReadOnlyList<四课之一> 比日者 =
-                        this.取上比者(贼克者, 日阴阳: 四课[1 - 1].下阴阳).ToList();
+                        取上比者(贼克者, 日阴阳: 四课[1 - 1].下阴阳).ToList();
 
                     if (比日者.Count is 1)
                     {
-                        this.以初传其乘再乘设三传(比日者.Single().上);
+                        以初传其乘再乘设三传(比日者.Single().上);
                         return;
                     }
 
                     比日者 = 比日者.Count is 0 ? 贼克者 : 比日者;
 
-                    var 涉害者 = 有贼否 ? this.下贼上比较涉害程度取(比日者) : this.上克下比较涉害程度取(比日者);
+                    var 涉害者 = 有贼否 ? 下贼上比较涉害程度取(比日者) : 上克下比较涉害程度取(比日者);
                     Debug.Assert(涉害者.Count is not 0);
 
                     if (涉害者.Count == 1)
                     {
-                        this.以初传其乘再乘设三传(涉害者[0].上);
+                        以初传其乘再乘设三传(涉害者[0].上);
                         return;
                     }
-                    var 孟仲者 = this.按下孟仲取(涉害者);
+                    var 孟仲者 = 按下孟仲取(涉害者);
 
                     if (孟仲者.Any())
-                        this.以初传其乘再乘设三传(孟仲者.First().上);
+                        以初传其乘再乘设三传(孟仲者.First().上);
                     else
                     {
                         if (四课[1 - 1].下阴阳.IsYang)
-                            this.以初传其乘再乘设三传(四课[1 - 1].上);
+                            以初传其乘再乘设三传(四课[1 - 1].上);
                         else
-                            this.以初传其乘再乘设三传(四课[3 - 1].上);
+                            以初传其乘再乘设三传(四课[3 - 1].上);
                     }
                     return;
                 }
@@ -98,27 +98,27 @@ namespace SixRens.式.三传实现
 
             {
                 // 遥克系列
-                var 遥克者 = this.取遥克(四课, 四课[1 - 1].下五行, out _);
+                var 遥克者 = 取遥克(四课, 四课[1 - 1].下五行, out _);
                 if (遥克者.Count is 1)
                 {
-                    this.以初传其乘再乘设三传(遥克者.Single().上);
+                    以初传其乘再乘设三传(遥克者.Single().上);
                     return;
                 }
                 if (遥克者.Count is not 0)
                 {
                     Debug.Assert(遥克者.Count is 2 or 3 or 4);
 
-                    var 比日者 = this.取上比者(遥克者, 日阴阳: 四课[1 - 1].下阴阳);
+                    var 比日者 = 取上比者(遥克者, 日阴阳: 四课[1 - 1].下阴阳);
 
                     Debug.Assert(比日者.Count() is 1, "不确定！但是不知道其他情况应该怎么办。");
-                    this.以初传其乘再乘设三传(比日者.Single().上);
+                    以初传其乘再乘设三传(比日者.Single().上);
                     return;
                 }
             }
 
             if (四课[1 - 1].支下或干下之寄宫.取冲() == 四课[1 - 1].上)
             {
-                this.反吟无克设三传(四课);
+                反吟无克设三传(四课);
                 return;
             }
 
@@ -128,15 +128,15 @@ namespace SixRens.式.三传实现
                 var 日阴阳 = 四课[1 - 1].下阴阳;
                 if (日阴阳.IsYang)
                 {
-                    this.初传 = 天地盘.取所乘神(酉);
-                    this.中传 = 四课[3 - 1].上;
-                    this.末传 = 四课[1 - 1].上;
+                    初传 = 天地盘.取所乘神(酉);
+                    中传 = 四课[3 - 1].上;
+                    末传 = 四课[1 - 1].上;
                     return;
                 }
 
-                this.初传 = 天地盘.取所临神(酉);
-                this.中传 = 四课[1 - 1].上;
-                this.末传 = 四课[3 - 1].上;
+                初传 = 天地盘.取所临神(酉);
+                中传 = 四课[1 - 1].上;
+                末传 = 四课[3 - 1].上;
                 return;
             }
         }
@@ -147,11 +147,11 @@ namespace SixRens.式.三传实现
 
             {
                 // 贼克系列
-                var 四课贼克者 = this.取贼或无贼取克(四课, out bool 有贼否);
+                var 四课贼克者 = 取贼或无贼取克(四课, out bool 有贼否);
 
                 if (四课贼克者.DistinctBy(课 => 课.上).Count() is 1)
                 {
-                    this.以初传其乘再乘设三传(四课贼克者[0].上);
+                    以初传其乘再乘设三传(四课贼克者[0].上);
                     return;
                 }
 
@@ -159,7 +159,7 @@ namespace SixRens.式.三传实现
                 {
                     Debug.Assert(四课贼克者.Count is 2 or 3 or 4);
 
-                    var 比日者 = this.取上比者(四课贼克者, 日阴阳: 四课[1 - 1].下阴阳);
+                    var 比日者 = 取上比者(四课贼克者, 日阴阳: 四课[1 - 1].下阴阳);
 
                     switch (比日者.Count())
                     {
@@ -167,31 +167,31 @@ namespace SixRens.式.三传实现
                             Debug.Fail("不确定，但好像确实如此。");
                             return;
                         case 1:
-                            this.以初传其乘再乘设三传(比日者.Single().上);
+                            以初传其乘再乘设三传(比日者.Single().上);
                             return;
                         case 2 when 比日者.DistinctBy(课 => 课.上).Count() is 1:
-                            this.以初传其乘再乘设三传(比日者.First().上);
+                            以初传其乘再乘设三传(比日者.First().上);
                             return;
                     }
 
-                    var 涉害者 = 有贼否 ? this.下贼上比较涉害程度取(比日者) : this.上克下比较涉害程度取(比日者);
+                    var 涉害者 = 有贼否 ? 下贼上比较涉害程度取(比日者) : 上克下比较涉害程度取(比日者);
                     Debug.Assert(涉害者.Count is not 0);
 
                     if (涉害者.DistinctBy(课 => 课.上).Count() == 1)
                     {
-                        this.以初传其乘再乘设三传(涉害者[0].上);
+                        以初传其乘再乘设三传(涉害者[0].上);
                         return;
                     }
-                    var 孟仲者 = this.按下孟仲取(涉害者);
+                    var 孟仲者 = 按下孟仲取(涉害者);
 
                     if (孟仲者.Any())
-                        this.以初传其乘再乘设三传(孟仲者.First().上);
+                        以初传其乘再乘设三传(孟仲者.First().上);
                     else
                     {
                         if (四课[1 - 1].下阴阳.IsYang)
-                            this.以初传其乘再乘设三传(四课[1 - 1].上);
+                            以初传其乘再乘设三传(四课[1 - 1].上);
                         else
-                            this.以初传其乘再乘设三传(四课[3 - 1].上);
+                            以初传其乘再乘设三传(四课[3 - 1].上);
                     }
                     return;
                 }
@@ -199,34 +199,34 @@ namespace SixRens.式.三传实现
 
             {
                 // 遥克系列
-                var 遥克者 = this.取遥克(不重复三课, 四课[1 - 1].下五行, out _);
+                var 遥克者 = 取遥克(不重复三课, 四课[1 - 1].下五行, out _);
                 if (遥克者.Count is 1)
                 {
-                    this.以初传其乘再乘设三传(遥克者.Single().上);
+                    以初传其乘再乘设三传(遥克者.Single().上);
                     return;
                 }
                 if (遥克者.Count is not 0)
                 {
                     Debug.Assert(遥克者.Count is 2 or 3);
 
-                    var 比日者 = this.取上比者(遥克者, 日阴阳: 四课[1 - 1].下阴阳);
+                    var 比日者 = 取上比者(遥克者, 日阴阳: 四课[1 - 1].下阴阳);
 
                     Debug.Assert(比日者.Count() is 1, "不确定！但是不知道其他情况应该怎么办。");
-                    this.以初传其乘再乘设三传(比日者.Single().上);
+                    以初传其乘再乘设三传(比日者.Single().上);
                     return;
                 }
             }
 
             if (四课[1 - 1].支下或干下之寄宫.取冲() == 四课[1 - 1].上)
             {
-                this.反吟无克设三传(四课);
+                反吟无克设三传(四课);
                 return;
             }
 
             {
                 // 别责
-                this.中传 = 四课[1 - 1].上;
-                this.末传 = this.中传;
+                中传 = 四课[1 - 1].上;
+                末传 = 中传;
 
                 var 日阴阳 = 四课[1 - 1].下阴阳;
                 if (日阴阳.IsYang)
@@ -234,12 +234,12 @@ namespace SixRens.式.三传实现
                     var 日 = 四课[1 - 1].干下;
                     Debug.Assert(日.HasValue);
 
-                    this.初传 = 天地盘.取所乘神(日.Value.取所合干().寄宫());
+                    初传 = 天地盘.取所乘神(日.Value.取所合干().寄宫());
                     return;
                 }
 
                 var 辰 = 四课[3 - 1].支下或干下之寄宫;
-                this.初传 = 辰.取所在三合局前一支();
+                初传 = 辰.取所在三合局前一支();
                 return;
             }
         }
@@ -278,12 +278,12 @@ namespace SixRens.式.三传实现
                         case 0:
                             break;
                         case 1:
-                            this.以初传其乘再乘设三传(四课[贼者.Single()].上);
+                            以初传其乘再乘设三传(四课[贼者.Single()].上);
                             return;
                         case 2:
                             if (贼者[0] == 0 && 贼者[1] == 2)
                             {
-                                this.以初传其乘再乘设三传(四课[0].上);
+                                以初传其乘再乘设三传(四课[0].上);
                                 return;
                             }
                             break;
@@ -298,34 +298,34 @@ namespace SixRens.式.三传实现
                     {
                         Debug.Assert(贼克者.Count() is 2);
 
-                        var 比日者 = this.取上比者(贼克者, 日阴阳: 四课[1 - 1].下阴阳);
+                        var 比日者 = 取上比者(贼克者, 日阴阳: 四课[1 - 1].下阴阳);
 
                         if (比日者.Count() is 1)
                         {
-                            this.以初传其乘再乘设三传(比日者.Single().上);
+                            以初传其乘再乘设三传(比日者.Single().上);
                             return;
                         }
 
                         Debug.Assert(比日者.Count() is 2 or 3, "不确定！但是不知道为没有时应该怎么做。");
 
-                        var 涉害者 = 贼否 ? this.下贼上比较涉害程度取(比日者) : this.上克下比较涉害程度取(比日者);
+                        var 涉害者 = 贼否 ? 下贼上比较涉害程度取(比日者) : 上克下比较涉害程度取(比日者);
                         Debug.Assert(涉害者.Count is not 0);
 
                         if (涉害者.Count == 1)
                         {
-                            this.以初传其乘再乘设三传(涉害者[0].上);
+                            以初传其乘再乘设三传(涉害者[0].上);
                             return;
                         }
-                        var 孟仲者 = this.按下孟仲取(涉害者);
+                        var 孟仲者 = 按下孟仲取(涉害者);
 
                         if (孟仲者.Any())
-                            this.以初传其乘再乘设三传(孟仲者.First().上);
+                            以初传其乘再乘设三传(孟仲者.First().上);
                         else
                         {
                             if (四课[1 - 1].下阴阳.IsYang)
-                                this.以初传其乘再乘设三传(四课[1 - 1].上);
+                                以初传其乘再乘设三传(四课[1 - 1].上);
                             else
-                                this.以初传其乘再乘设三传(四课[3 - 1].上);
+                                以初传其乘再乘设三传(四课[3 - 1].上);
                         }
                         return;
                     }
@@ -333,19 +333,19 @@ namespace SixRens.式.三传实现
 
                 if (四课[1 - 1].支下或干下之寄宫.取冲() == 四课[1 - 1].上)
                 {
-                    this.反吟无克设三传(四课);
+                    反吟无克设三传(四课);
                     return;
                 }
 
                 var 日阳 = 四课[1 - 1].上;
-                this.中传 = 日阳;
-                this.末传 = this.中传;
+                中传 = 日阳;
+                末传 = 中传;
 
                 var 日阴阳 = 四课[1 - 1].下阴阳;
                 if (日阴阳.IsYang)
-                    this.初传 = 日阳.Next(2);
+                    初传 = 日阳.Next(2);
                 else
-                    this.初传 = 四课[4 - 1].上.Next(-2);
+                    初传 = 四课[4 - 1].上.Next(-2);
                 return;
             }
 
@@ -353,28 +353,28 @@ namespace SixRens.式.三传实现
             {
                 {
                     // 对两课贼克
-                    var 贼克者 = this.取贼或无贼取克(四课.Take(2), out bool 有贼否);
+                    var 贼克者 = 取贼或无贼取克(四课.Take(2), out bool 有贼否);
                     Debug.Assert(贼克者.Count is 0 or 1);
 
                     if (贼克者.Count is 1)
                     {
-                        this.以初传其乘再乘设三传(贼克者.Single().上);
+                        以初传其乘再乘设三传(贼克者.Single().上);
                         return;
                     }
                 }
 
-                this.反吟无克设三传(四课);
+                反吟无克设三传(四课);
                 return;
             }
 
             Debug.Assert(四课[1 - 1].支下或干下之寄宫 == 四课[1 - 1].上);
-            this.伏吟(四课);
+            伏吟(四课);
         }
         private void 唯有一课(四课之一[] 四课)
         {
             Debug.Assert(四课.Length is 4);
             Debug.Assert(四课[1 - 1].支下或干下之寄宫 == 四课[1 - 1].上);
-            this.伏吟(四课);
+            伏吟(四课);
             return;
         }
         #endregion
@@ -383,9 +383,9 @@ namespace SixRens.式.三传实现
         private void 反吟无克设三传(四课之一[] 四课)
         {
             var 马 = 四课[3 - 1].支下或干下之寄宫.取所在三合局().长生支.Next(6);
-            this.初传 = 马;
-            this.中传 = 四课[3 - 1].上;
-            this.末传 = 四课[1 - 1].上;
+            初传 = 马;
+            中传 = 四课[3 - 1].上;
+            末传 = 四课[1 - 1].上;
         }
         private void 伏吟(四课之一[] 四课)
         {
@@ -398,34 +398,34 @@ namespace SixRens.式.三传实现
             switch (日.Value.Index)
             {
                 case 10: // 癸日 丑戌未
-                    this.初传 = new EarthlyBranch(2);
-                    this.中传 = new EarthlyBranch(11);
-                    this.末传 = new EarthlyBranch(8);
+                    初传 = new EarthlyBranch(2);
+                    中传 = new EarthlyBranch(11);
+                    末传 = new EarthlyBranch(8);
                     return;
                 case 2: // 乙日
-                    this.初传 = new EarthlyBranch(5); // 辰发用
-                    this.中传 = 四课[3 - 1].上;
-                    var 刑神 = this.中传.取所刑();
-                    this.末传 = 刑神 == this.中传 ? this.中传.取冲() : 刑神;
+                    初传 = new EarthlyBranch(5); // 辰发用
+                    中传 = 四课[3 - 1].上;
+                    var 刑神 = 中传.取所刑();
+                    末传 = 刑神 == 中传 ? 中传.取冲() : 刑神;
                     return;
                 default:
                     if (四课[1 - 1].下阴阳.IsYang)
                     {
-                        this.初传 = 四课[1 - 1].上;
-                        刑神 = this.初传.取所刑();
-                        this.中传 = 刑神 == this.初传 ? 四课[3 - 1].上 : 刑神;
-                        刑神 = this.中传.取所刑();
+                        初传 = 四课[1 - 1].上;
+                        刑神 = 初传.取所刑();
+                        中传 = 刑神 == 初传 ? 四课[3 - 1].上 : 刑神;
+                        刑神 = 中传.取所刑();
                         // 末传 = 刑神 == 中传 ? 中传.取冲() : 刑神;
-                        this.末传 = 刑神 == this.中传 || 刑神 == this.初传 ? this.中传.取冲() : 刑神;
+                        末传 = 刑神 == 中传 || 刑神 == 初传 ? 中传.取冲() : 刑神;
                     }
                     else
                     {
-                        this.初传 = 四课[3 - 1].上;
-                        刑神 = this.初传.取所刑();
-                        this.中传 = 刑神 == this.初传 ? 四课[1 - 1].上 : 刑神;
-                        刑神 = this.中传.取所刑();
+                        初传 = 四课[3 - 1].上;
+                        刑神 = 初传.取所刑();
+                        中传 = 刑神 == 初传 ? 四课[1 - 1].上 : 刑神;
+                        刑神 = 中传.取所刑();
                         // 末传 = 刑神 == 中传 ? 中传.取冲() : 刑神;
-                        this.末传 = 刑神 == this.中传 || 刑神 == this.初传 ? this.中传.取冲() : 刑神;
+                        末传 = 刑神 == 中传 || 刑神 == 初传 ? 中传.取冲() : 刑神;
                     }
                     return;
             }
@@ -434,8 +434,8 @@ namespace SixRens.式.三传实现
         private void 以初传其乘再乘设三传(EarthlyBranch 初传)
         {
             this.初传 = 初传;
-            this.中传 = 天地盘.取所乘神(初传);
-            this.末传 = 天地盘.取所乘神(this.中传);
+            中传 = 天地盘.取所乘神(初传);
+            末传 = 天地盘.取所乘神(中传);
         }
         private IReadOnlyList<四课之一> 取贼或无贼取克(
             IEnumerable<四课之一> 各课, out bool 有贼否)

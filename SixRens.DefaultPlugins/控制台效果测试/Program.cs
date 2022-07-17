@@ -2,6 +2,7 @@
 using SixRens.Api.实体;
 using SixRens.Api.工具;
 using SixRens.DefaultPlugins.三传;
+using SixRens.DefaultPlugins.参考;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
@@ -33,6 +34,17 @@ namespace 控制台效果测试
             Console.WriteLine(string.Join(空格, 壬式.课体.Select(体 => 体.课体名)));
             Console.WriteLine();
         }
+        private static void 打印参考(壬式 壬式)
+        {
+            foreach (var 参考 in 壬式.占断参考)
+            {
+                Console.Write(参考.题目);
+                Console.WriteLine("：");
+                Console.WriteLine(参考.内容);
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
         public static void Main()
         {
             var time = new DateTime(2022, 2, 24, 22, 00, 0);
@@ -47,7 +59,8 @@ namespace 控制台效果测试
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
                 new 年命默认(),
                 new[] { new 神煞测试() },
-                new[] { new 课体测试() });
+                new[] { new 课体测试() },
+                new[] { new 参考测试() });
             打印年月日时(壬式);
             打印年命(壬式);
             打印三传(壬式);
@@ -55,6 +68,7 @@ namespace 控制台效果测试
             打印天盘(壬式);
             打印课体(壬式);
             试打印神煞(壬式);
+            打印参考(壬式);
             _ = Console.ReadLine();
         }
         private static void 打印年月日时(壬式 壬式)
@@ -76,7 +90,7 @@ namespace 控制台效果测试
                 return $"{(年命.性别.IsYang ? '男' : '女')}{年命.本命:C}命{年命.行年:C}年";
             }
             var 课主 = 壬式.课主年命;
-            if(课主 is not null)
+            if (课主 is not null)
                 Console.WriteLine($"课主{空格}{转字符串(课主)}");
             if (壬式.对象年命.Count != 0)
             {

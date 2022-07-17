@@ -1,7 +1,4 @@
 ﻿using SixRens.Api.实体;
-using SixRens.Api.工具;
-using System.Diagnostics;
-using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.课体
 {
@@ -23,7 +20,7 @@ namespace SixRens.DefaultPlugins.课体
         public IEnumerable<I课体> 取课体()
         {
             yield return new 课体("测试一");
-            if(式.年月日时.昼占)
+            if (式.年月日时.昼占)
             {
                 yield return new 课体("测试昼占");
             }

@@ -13,7 +13,7 @@ namespace SixRens.式.三传实现
             this.四课 = 四课;
             this.天地盘 = 天地盘;
             if (立即计算)
-                this.重新计算();
+                重新计算();
         }
 
         public EarthlyBranch 初传 { get; private set; }

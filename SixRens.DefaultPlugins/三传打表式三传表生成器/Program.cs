@@ -1,8 +1,6 @@
 ﻿using com.nlf.calendar;
 using SixRens;
 using SixRens.Api;
-using SixRens.Api.实体;
-using SixRens.DefaultPlugins.三传;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
@@ -12,7 +10,6 @@ using SixRens.实体;
 using SixRens.扩展;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
-using 三传打表式三传表生成器;
 using 三传打表式三传表生成器.三传取法;
 
 int GenerateKey(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
@@ -46,7 +43,8 @@ for (int i = 0; i < 60; i++)
             new 天将甲戊庚牛羊壬癸蛇兔藏(),
             new 年命默认(),
             Array.Empty<I神煞插件>(),
-            Array.Empty<I课体插件>());
+            Array.Empty<I课体插件>(),
+            Array.Empty<I参考插件>());
 
         sw.Write("                ");
         sw.Write(GenerateKey(式.四课.日, 式.四课.辰, 式.取所乘神(子)));

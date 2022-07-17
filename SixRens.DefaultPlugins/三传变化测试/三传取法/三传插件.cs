@@ -1,7 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
 using SixRens.Api.实体.壬式;
-using SixRens.DefaultPlugins.工具;
 using SixRens.式.三传实现;
 
 namespace 三传变化测试.三传取法

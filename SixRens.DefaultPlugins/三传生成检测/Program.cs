@@ -1,7 +1,6 @@
 ﻿using com.nlf.calendar;
 using SixRens;
 using SixRens.Api;
-using SixRens.Api.实体;
 using SixRens.DefaultPlugins.三传;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
@@ -9,11 +8,8 @@ using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
 using SixRens.实体;
-using SixRens.式.三传实现;
 using SixRens.扩展;
 using YiJingFramework.StemsAndBranches;
-using 三传生成检测;
-using 三传生成检测.三传取法;
 
 namespace Test
 {
@@ -42,7 +38,8 @@ namespace Test
                         new 天将甲戊庚牛羊壬癸蛇兔藏(),
                         new 年命默认(),
                         Array.Empty<I神煞插件>(),
-                        Array.Empty<I课体插件>());
+                        Array.Empty<I课体插件>(),
+                        Array.Empty<I参考插件>());
 
                     var str1 = $"{年月日时.日干:C}{年月日时.日支:C} {式.取所乘神(子):C}加子";
                     var str2 = $"{式.三传.初传:C}{式.三传.中传:C}{式.三传.末传:C}";
