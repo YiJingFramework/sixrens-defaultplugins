@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,12 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="lunar-csharp" Version="1.2.19" />
     <PackageReference Include="SixRens.Core" Version="1.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj" />
   </ItemGroup>
 
 </Project>

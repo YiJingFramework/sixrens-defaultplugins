@@ -1,21 +1,15 @@
 ﻿using SixRens.Core;
 using SixRens.Api.实体;
 using SixRens.Api.工具;
-using SixRens.DefaultPlugins.三传;
-using SixRens.DefaultPlugins.参考;
-using SixRens.DefaultPlugins.四课;
-using SixRens.DefaultPlugins.地盘;
-using SixRens.DefaultPlugins.天将;
-using SixRens.DefaultPlugins.天盘;
-using SixRens.DefaultPlugins.年命;
-using SixRens.DefaultPlugins.神煞;
-using SixRens.DefaultPlugins.课体;
 using SixRens.Core.实体;
 using SixRens.Core.扩展;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
+using SixRens.Core.插件;
+using System.Diagnostics;
+using System.Runtime.Loader;
 
-namespace 控制台效果测试
+namespace 控制台效果测试插件法
 {
     public class Program
     {
@@ -49,18 +43,26 @@ namespace 控制台效果测试
         {
             var time = new DateTime(2022, 2, 24, 22, 00, 0);
             I年月日时信息 年月日时 = new 真实年月日时(time);
+
+            Console.WriteLine("路径：");
+            var 包路径 = Console.ReadLine();
+            Debug.Assert(包路径 is not null);
+            using var 插件包流 = File.OpenRead(包路径);
+            插件包 插件包;
+            插件包 = new 插件包(插件包流);
+
             壬式 壬式 = new 壬式(年月日时,
                 new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
                 new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
-                new 地盘默认(),
-                new 天盘月将加时(),
-                new 四课默认(),
-                new 三传涉害深浅(),
-                new 天将甲戊庚牛羊壬癸蛇兔藏(),
-                new 年命默认(),
-                new[] { new 神煞测试() },
-                new[] { new 课体测试() },
-                new[] { new 参考测试() });
+                插件包.地盘插件.Single(),
+                插件包.天盘插件.Single(),
+                插件包.四课插件.Single(),
+                插件包.三传插件.Single(),
+                插件包.天将插件.Single(),
+                插件包.年命插件.Single(),
+                插件包.神煞插件,
+                插件包.课体插件,
+                插件包.参考插件);
             打印年月日时(壬式);
             打印年命(壬式);
             打印三传(壬式);

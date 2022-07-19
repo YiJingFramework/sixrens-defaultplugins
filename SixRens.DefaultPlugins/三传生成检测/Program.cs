@@ -7,11 +7,12 @@ using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
-using SixRens.实体;
-using SixRens.扩展;
+using SixRens.Core.实体;
+using SixRens.Core.扩展;
 using YiJingFramework.StemsAndBranches;
+using SixRens.Core;
 
-namespace Test
+namespace 三传生成检测
 {
     internal class Program
     {

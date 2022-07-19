@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "三传变化测试", "三�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "三传", "三传", "{91764EC1-0F55-42A9-8EB9-42D0E7285B1C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "打包程序", "打包程序\打包程序.csproj", "{6D4455D7-F203-4E68-8C10-790BE7A83243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "控制台效果测试插件法", "控制台效果测试插件法\控制台效果测试插件法.csproj", "{9F8A0F87-1A33-4CDE-B923-AA63CEB9A210}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC7810B6-6E56-4501-B453-4692BB041CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4455D7-F203-4E68-8C10-790BE7A83243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4455D7-F203-4E68-8C10-790BE7A83243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4455D7-F203-4E68-8C10-790BE7A83243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4455D7-F203-4E68-8C10-790BE7A83243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8A0F87-1A33-4CDE-B923-AA63CEB9A210}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8A0F87-1A33-4CDE-B923-AA63CEB9A210}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8A0F87-1A33-4CDE-B923-AA63CEB9A210}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8A0F87-1A33-4CDE-B923-AA63CEB9A210}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

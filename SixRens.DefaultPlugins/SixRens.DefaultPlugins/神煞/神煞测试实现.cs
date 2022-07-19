@@ -1,11 +1,12 @@
-﻿using SixRens.Api.实体;
+﻿using SixRens.Api;
+using SixRens.Api.实体;
 using SixRens.Api.工具;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.神煞
 {
-    internal sealed class 神煞测试实现
+    internal static class 神煞测试实现
     {
         private sealed record 壬式(I年月日时 年月日时);
 
@@ -99,27 +100,26 @@ namespace SixRens.DefaultPlugins.神煞
                 });
         }
 
-        private readonly 壬式 式;
-
-        public 神煞测试实现(I年月日时 年月日时)
-        {
-            式 = new(年月日时);
-        }
-
-        private sealed record 神煞(
-            string 神煞名,
-            IReadOnlyList<EarthlyBranch> 所在神) : I神煞
+        private sealed record 神煞题目(
+            string 神煞名) : I神煞题目
         { }
-        public IEnumerable<I神煞> 取煞()
+        private sealed record 神煞内容(
+            IReadOnlyList<EarthlyBranch> 所在神) : I神煞内容
+        { }
+        public static IEnumerable<I神煞题目> 支持的神煞 => 
+            取神煞法列表.Keys.Select(神煞名 => new 神煞题目(神煞名));
+
+        public static I神煞内容 取煞(I年月日时 年月日时, I神煞题目 题目)
         {
-            foreach (var (神煞名, 取法) in 取神煞法列表)
-            {
-                var 神 = 取法(式);
-                if (神.HasValue)
-                    yield return new 神煞(神煞名, Array.AsReadOnly(new[] { 神.Value }));
-                else
-                    yield return new 神煞(神煞名, Array.Empty<EarthlyBranch>());
-            }
+            壬式 式 = new(年月日时);
+            if (!取神煞法列表.TryGetValue(题目.神煞名, out var 取法))
+                throw new 起课失败异常($"不支持的神煞题目：{题目.神煞名}");
+
+            var 结果 = 取法(式);
+            if (结果.HasValue)
+                return new 神煞内容(Array.AsReadOnly(new[] { 结果.Value }));
+            else
+                return new 神煞内容(Array.Empty<EarthlyBranch>());
         }
     }
 }

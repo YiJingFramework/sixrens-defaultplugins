@@ -6,11 +6,12 @@ using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
-using SixRens.实体;
-using SixRens.扩展;
+using SixRens.Core.实体;
+using SixRens.Core.扩展;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 using 三传打表式三传表生成器.三传取法;
+using SixRens.Core;
 
 int GenerateKey(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
 {
