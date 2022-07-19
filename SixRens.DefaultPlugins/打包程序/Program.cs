@@ -2,7 +2,7 @@
 using SixRens.Api.工具;
 using 打包程序;
 
-var 文件信息 = new FileInfo($"{打包参数.信息.名称}-{打包参数.信息.版本号}.zip");
+var 文件信息 = new FileInfo($"{打包参数.信息.名称}-{打包参数.信息.版本号}.srspg");
 
 using FileStream 文件 = new FileStream(文件信息.FullName, FileMode.Create);
 using var 压缩包 = new ZipArchive(文件, ZipArchiveMode.Create);
