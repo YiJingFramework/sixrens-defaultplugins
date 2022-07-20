@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿/*
+using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.式.三传实现
@@ -745,3 +746,4 @@ namespace SixRens.式.三传实现
         }
     }
 }
+*/

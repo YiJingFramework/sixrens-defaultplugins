@@ -1,4 +1,6 @@
-﻿using SixRens.Api.实体.壬式;
+﻿/*
+using SixRens.Api;
+using SixRens.Api.实体.壬式;
 using SixRens.DefaultPlugins.工具;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
@@ -11,7 +13,18 @@ namespace SixRens.式.三传实现
 
         internal 三传涉害深浅实现打表式(I四课 四课, 可逆天盘 天地盘)
         {
-            var 键 = 生成键(四课.日, 四课.辰, 天地盘.取所乘神(子));
+            var 子所乘 = 天地盘.取所乘神(子);
+
+            EarthlyBranch 预期 = 子所乘.Next();
+            for (int 序号 = 2; 序号 <= 12; 序号++)
+            {
+                var 地支 = new EarthlyBranch(序号);
+                if (天地盘.取所乘神(地支) != 预期)
+                    throw new 起课失败异常("不支持的天盘");
+                预期 = 预期.Next();
+            }
+
+            var 键 = 生成键(四课.日, 四课.辰, 子所乘);
             var (初, 中, 末) = 获取三传(键);
 
             Debug.Assert(初 is not 0 && 中 is not 0 && 末 is not 0);
@@ -28,3 +41,4 @@ namespace SixRens.式.三传实现
         public EarthlyBranch 末传 { get; private set; }
     }
 }
+*/

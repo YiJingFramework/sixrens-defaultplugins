@@ -14,9 +14,9 @@ namespace SixRens.DefaultPlugins.工具
             this.天盘 = 天盘;
 
             this.从天神查地支表 = new Dictionary<EarthlyBranch, EarthlyBranch>(12);
-            for (int i = 1; i <= 12; i++)
+            for (int 序号 = 1; 序号 <= 12; 序号++)
             {
-                var 地支 = new EarthlyBranch(i);
+                var 地支 = new EarthlyBranch(序号);
                 var 天神 = this.天盘.取天神(地支);
                 this.从天神查地支表.Add(天神, 地支);
             }
