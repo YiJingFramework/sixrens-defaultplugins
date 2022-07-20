@@ -8,7 +8,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.三传
 {
-    internal partial class 三传涉害深浅实现
+    internal partial class 三传涉害深浅计算式实现
     {
         internal void 重新计算()
         {

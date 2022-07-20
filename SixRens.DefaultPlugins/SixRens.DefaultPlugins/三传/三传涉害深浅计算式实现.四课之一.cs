@@ -5,7 +5,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.三传
 {
-    internal partial class 三传涉害深浅实现
+    internal partial class 三传涉害深浅计算式实现
     {
         private sealed class 四课之一
         {

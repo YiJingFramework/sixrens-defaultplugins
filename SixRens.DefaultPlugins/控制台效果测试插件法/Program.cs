@@ -42,28 +42,51 @@ namespace 控制台效果测试插件法
         }
         public static void Main()
         {
+            var 插件包 = 加载插件包();
             var time = new DateTime(2022, 2, 24, 22, 00, 0);
             I年月日时信息 年月日时 = new 真实年月日时(time);
-
-            Console.WriteLine("路径：");
-            var 包路径 = Console.ReadLine();
-            Debug.Assert(包路径 is not null);
-            using var 插件包流 = File.OpenRead(包路径);
-            插件包 插件包;
-            插件包 = new 插件包(插件包流);
 
             壬式 壬式 = new 壬式(年月日时,
                 new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
                 new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
-                插件包.地盘插件.Single(),
-                插件包.天盘插件.Single(),
-                插件包.四课插件.Single(),
-                插件包.三传插件.Single(),
-                插件包.天将插件.Single(),
-                插件包.年命插件.Single(),
+                插件包.地盘插件[0],
+                插件包.天盘插件[0],
+                插件包.四课插件[0],
+                插件包.三传插件[0],
+                插件包.天将插件[0],
+                插件包.年命插件[0],
                 插件包.神煞插件,
                 插件包.课体插件,
                 插件包.参考插件);
+            测试(壬式);
+            Console.WriteLine("============");
+
+            壬式 = new 壬式(年月日时,
+                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
+                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
+                插件包.地盘插件[0],
+                插件包.天盘插件[0],
+                插件包.四课插件[0],
+                插件包.三传插件[1],
+                插件包.天将插件[0],
+                插件包.年命插件[0],
+                插件包.神煞插件,
+                插件包.课体插件,
+                插件包.参考插件);
+            测试(壬式);
+            _ = Console.ReadLine();
+        }
+
+        private static 插件包 加载插件包()
+        {
+            Console.Write("路径：");
+            var 包路径 = Console.ReadLine();
+            Debug.Assert(包路径 is not null);
+            using var 插件包流 = File.OpenRead(包路径);
+            return new 插件包(插件包流);
+        }
+        private static void 测试(壬式 壬式)
+        {
             打印年月日时(壬式);
             打印年命(壬式);
             打印三传(壬式);
@@ -72,8 +95,8 @@ namespace 控制台效果测试插件法
             打印课体(壬式);
             试打印神煞(壬式);
             打印参考(壬式);
-            _ = Console.ReadLine();
         }
+
         private static void 打印年月日时(壬式 壬式)
         {
             var 年月日时 = 壬式.年月日时;
