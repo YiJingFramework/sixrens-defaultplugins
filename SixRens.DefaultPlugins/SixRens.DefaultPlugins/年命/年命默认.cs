@@ -13,7 +13,7 @@ namespace SixRens.DefaultPlugins.年命
         public Guid 插件识别码 => new Guid("56892793-4951-495B-98F0-F9683B3F2AF5");
 
         public I年命 获取年命(I年月日时 年月日时,
-            地支盘 基础盘, 地支盘 地盘, 地支盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘,
+            I地盘 地盘, I天盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘,
             YinYang 性别, EarthlyBranch 本命)
         {
             return new 年命默认实现(年月日时, 性别, 本命);

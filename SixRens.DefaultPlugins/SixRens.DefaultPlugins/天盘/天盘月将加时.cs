@@ -10,9 +10,9 @@ namespace SixRens.DefaultPlugins.天盘
 
         public Guid 插件识别码 => new Guid("7D33B8B0-5CC2-4E78-AB44-077C69908249");
 
-        public 地支盘 获取天盘(I年月日时 年月日时, 地支盘 基础盘, 地支盘 地盘)
+        public I天盘 获取天盘(I年月日时 年月日时, I地盘 地盘)
         {
-            return new 地支盘(地盘, 年月日时.时支, 年月日时.月将);
+            return new 天盘月将加时默认实现(年月日时);
         }
     }
 }

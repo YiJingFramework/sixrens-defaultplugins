@@ -23,7 +23,7 @@ namespace SixRens.DefaultPlugins.课体
             }
         }
 
-        public IEnumerable<I课体> 识别课体(I年月日时 年月日时, 地支盘 基础盘, 地支盘 地盘, 地支盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘, I年命? 课主年命, IReadOnlyList<I年命> 对象年命, IReadOnlyList<I神煞> 神煞列表)
+        public IEnumerable<I课体> 识别课体(I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘, I年命? 课主年命, IReadOnlyList<I年命> 对象年命, IReadOnlyList<I神煞> 神煞列表)
         {
             yield return new 课体("测试一");
             if (年月日时.昼占)

@@ -10,7 +10,7 @@ using SixRens.Core.实体;
 using SixRens.Core.扩展;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
-using 三传打表式三传表生成器.三传取法;
+using 三传取法;
 using SixRens.Core;
 
 int GenerateKey(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)

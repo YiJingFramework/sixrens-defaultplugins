@@ -9,11 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="lunar-csharp" Version="1.2.19" />
-    <PackageReference Include="SixRens.Core" Version="1.6.2" />
+    <PackageReference Include="SixRens.Core" Version="1.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj" />
+    <ProjectReference Include="..\三传取法\三传取法.csproj" />
   </ItemGroup>
 
 </Project>

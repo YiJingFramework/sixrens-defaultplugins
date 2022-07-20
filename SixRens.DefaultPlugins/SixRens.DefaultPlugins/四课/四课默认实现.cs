@@ -8,7 +8,7 @@ namespace SixRens.DefaultPlugins.四课
 {
     internal sealed class 四课默认实现 : I四课
     {
-        internal 四课默认实现(I年月日时 年月日时, 天地盘 天地盘)
+        internal 四课默认实现(I年月日时 年月日时, 可逆天盘 天地盘)
         {
             {
                 var 日 = 年月日时.日干;

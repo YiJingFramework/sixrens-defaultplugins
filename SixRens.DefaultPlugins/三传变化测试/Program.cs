@@ -9,7 +9,7 @@ using SixRens.DefaultPlugins.年命;
 using SixRens.Core.实体;
 using SixRens.Core.扩展;
 using YiJingFramework.StemsAndBranches;
-using 三传变化测试.三传取法;
+using 三传取法;
 using SixRens.Core;
 
 namespace 三传变化测试

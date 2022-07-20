@@ -5,7 +5,7 @@ using YiJingFramework.Core;
 using YiJingFramework.FiveElements;
 using YiJingFramework.StemsAndBranches;
 
-namespace SixRens.式.三传实现
+namespace 三传取法
 {
     internal partial class 三传实现
     {

@@ -1,14 +1,13 @@
 ﻿using SixRens.Api.实体.壬式;
 using YiJingFramework.StemsAndBranches;
-using 三传变化测试.三传取法;
 
-namespace SixRens.式.三传实现
+namespace 三传取法
 {
     internal sealed partial class 三传实现 : I三传
     {
         private readonly I四课 四课;
-        private readonly 天地盘 天地盘;
-        internal 三传实现(I四课 四课, 天地盘 天地盘, bool 立即计算 = true)
+        private readonly 可逆天盘 天地盘;
+        internal 三传实现(I四课 四课, 可逆天盘 天地盘, bool 立即计算 = true)
         {
             this.四课 = 四课;
             this.天地盘 = 天地盘;

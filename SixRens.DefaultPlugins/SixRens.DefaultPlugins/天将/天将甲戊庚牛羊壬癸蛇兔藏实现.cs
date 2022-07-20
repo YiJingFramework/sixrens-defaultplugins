@@ -7,7 +7,7 @@ namespace SixRens.DefaultPlugins.天将
 {
     internal sealed class 天将甲戊庚牛羊壬癸蛇兔藏实现 : I天将盘
     {
-        internal 天将甲戊庚牛羊壬癸蛇兔藏实现(I年月日时 年月日时, 天地盘 天地盘)
+        internal 天将甲戊庚牛羊壬癸蛇兔藏实现(I年月日时 年月日时, 可逆天盘 天地盘)
         {
             贵人序号 = 年月日时.日干.Index switch
             {

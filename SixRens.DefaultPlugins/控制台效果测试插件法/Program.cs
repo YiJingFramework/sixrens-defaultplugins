@@ -2,12 +2,13 @@
 using SixRens.Api.实体;
 using SixRens.Api.工具;
 using SixRens.Core.实体;
-using SixRens.Core.扩展;
+using SixRens.Core.工具.年月日时;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
-using SixRens.Core.插件;
+using SixRens.Core.工具.插件管理;
 using System.Diagnostics;
 using System.Runtime.Loader;
+using SixRens.Core.工具.名称转换;
 
 namespace 控制台效果测试插件法
 {
@@ -109,7 +110,7 @@ namespace 控制台效果测试插件法
                 var 落空 = 旬.获取对应天干(壬式.取所临神(支)).HasValue ? $"{空格}{空格}" : "落空";
                 var 六亲 = 壬式.年月日时.日干.判断六亲(支);
                 var 遁干 = 旬.获取对应天干(支)?.ToString("C") ?? 空格;
-                var 天将 = (天将简称)壬式.取所乘将(支);
+                var 天将 = 壬式.取所乘将(支).简称();
                 return $"{落空}{空格}{六亲}{空格}{遁干}{支:C}{天将}";
             }
 
@@ -123,10 +124,10 @@ namespace 控制台效果测试插件法
         }
         private static void 打印四课(壬式 壬式)
         {
-            Console.WriteLine($"{(天将简称)壬式.取所乘将(壬式.四课.辰阴)}" +
-                $"{(天将简称)壬式.取所乘将(壬式.四课.辰阳)}" +
-                $"{(天将简称)壬式.取所乘将(壬式.四课.日阴)}" +
-                $"{(天将简称)壬式.取所乘将(壬式.四课.日阳)}");
+            Console.WriteLine($"{壬式.取所乘将(壬式.四课.辰阴).简称()}" +
+                $"{壬式.取所乘将(壬式.四课.辰阳).简称()}" +
+                $"{壬式.取所乘将(壬式.四课.日阴).简称()}" +
+                $"{壬式.取所乘将(壬式.四课.日阳).简称()}");
             Console.WriteLine($"{壬式.四课.辰阴:C}{壬式.四课.辰阳:C}" +
                 $"{壬式.四课.日阴:C}{壬式.四课.日阳:C}");
             Console.WriteLine($"{壬式.四课.辰阳:C}{壬式.四课.辰:C}" +
