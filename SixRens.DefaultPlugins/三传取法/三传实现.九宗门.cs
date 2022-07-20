@@ -13,10 +13,10 @@ namespace 三传取法
         {
             var 四课 = new 四课之一[4]
             {
-                new 四课之一(this.四课.第一课),
-                new 四课之一(this.四课.第二课),
-                new 四课之一(this.四课.第三课),
-                new 四课之一(this.四课.第四课)
+                new 四课之一(this.四课.日, this.四课.日阳),
+                new 四课之一(this.四课.日阳, this.四课.日阴),
+                new 四课之一(this.四课.辰, this.四课.辰阳),
+                new 四课之一(this.四课.辰阳, this.四课.辰阴)
             };
 
             List<四课之一> 不重复原序课 = new List<四课之一>(4);
