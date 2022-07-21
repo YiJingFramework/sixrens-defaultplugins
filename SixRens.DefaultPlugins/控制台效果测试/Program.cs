@@ -47,7 +47,7 @@ namespace 控制台效果测试
         }
         public static void Main()
         {
-            var time = new DateTime(2022, 2, 24, 22, 00, 0);
+            var time = DateTime.Now;
             I年月日时信息 年月日时 = new 真实年月日时(time);
             壬式 壬式 = new 壬式(年月日时,
                 new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
@@ -59,7 +59,7 @@ namespace 控制台效果测试
                 new 三传涉害深浅计算式(),
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
                 new 年命默认(),
-                new[] { new 神煞测试() },
+                new[] { new 神煞六壬辨疑神煞纪要() },
                 new[] { new 课体测试() },
                 new[] { new 参考测试() });
             打印年月日时(壬式);

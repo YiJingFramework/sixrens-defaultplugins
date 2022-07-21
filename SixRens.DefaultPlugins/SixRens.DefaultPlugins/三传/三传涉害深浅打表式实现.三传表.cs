@@ -3,7 +3,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.三传
 {
-    internal partial class 三传涉害深浅实现打表式
+    internal partial class 三传涉害深浅打表式实现
     {
         private static int 生成键(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
         {
