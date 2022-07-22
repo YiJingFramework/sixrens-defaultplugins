@@ -380,7 +380,6 @@ namespace SixRens.DefaultPlugins.神煞
             public static 取神煞法 飞廉 => (式) =>
             {
                 // 卯月起巳，午月起寅，酉月起亥，子月起申，俱顺行。
-#warning 与别他有异
                 var 月支 = 式.年月日时.月支;
                 return new(月支.Index switch
                 {
@@ -529,7 +528,7 @@ namespace SixRens.DefaultPlugins.神煞
             public static 取神煞法 天赦 => (式) =>
             {
                 // 戊寅、甲午、戊申、甲子。
-#warning 戊、甲为何意？
+#warning 此戊、甲为何意？
                 var 时 = 式.年月日时.月支.获取四时();
                 return new(时 switch
                 {
