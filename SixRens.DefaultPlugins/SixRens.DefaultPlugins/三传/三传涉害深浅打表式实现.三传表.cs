@@ -18,8 +18,7 @@ namespace SixRens.DefaultPlugins.三传
         /// <returns>如果键不正确，返回 (0, 0, 0) 。</returns>
         private static (int 初, int 中, int 末) 获取三传(int 键)
         {
-            return 键 switch
-            {
+            return 键 switch {
                 10101 => (3, 6, 9),
                 10102 => (5, 6, 7),
                 10103 => (5, 7, 9),

@@ -18,7 +18,7 @@ namespace SixRens.DefaultPlugins.参考
             string? 内容) : I占断参考内容
         { }
 
-        private readonly static Dictionary<string, string> 参考字典 = new()
+        private static readonly Dictionary<string, string> 参考字典 = new()
         {
             { "参考测试一", "这是一个测试参考" },
             { "参考测试二", "这是第二个测试参考" },

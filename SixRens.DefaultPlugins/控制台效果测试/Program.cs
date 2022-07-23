@@ -1,6 +1,8 @@
-﻿using SixRens.Core;
-using SixRens.Api.实体;
+﻿using SixRens.Api.实体;
 using SixRens.Api.工具;
+using SixRens.Core;
+using SixRens.Core.实体;
+using SixRens.Core.工具.名称转换;
 using SixRens.DefaultPlugins.三传;
 using SixRens.DefaultPlugins.参考;
 using SixRens.DefaultPlugins.四课;
@@ -10,8 +12,6 @@ using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
 using SixRens.DefaultPlugins.神煞;
 using SixRens.DefaultPlugins.课体;
-using SixRens.Core.实体;
-using SixRens.Core.工具.名称转换;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
 

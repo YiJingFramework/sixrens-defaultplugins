@@ -14,12 +14,12 @@ namespace SixRens.DefaultPlugins.年命
             if (性别.IsYang)
             {
                 const int 寅数 = 3;
-                行年 = new(寅数 + 年月日时.年支.Index - 本命.Index);
+                this.行年 = new(寅数 + 年月日时.年支.Index - 本命.Index);
             }
             else
             {
                 const int 申数 = 9;
-                行年 = new(申数 - 年月日时.年支.Index + 本命.Index);
+                this.行年 = new(申数 - 年月日时.年支.Index + 本命.Index);
             }
         }
 

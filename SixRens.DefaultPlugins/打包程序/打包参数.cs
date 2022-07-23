@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace 打包程序
+﻿namespace 打包程序
 {
     internal static class 打包参数
     {

@@ -1,16 +1,15 @@
 ﻿using com.nlf.calendar;
-using SixRens;
 using SixRens.Api;
+using SixRens.Core;
+using SixRens.Core.实体;
+using SixRens.Core.工具.年月日时;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
-using SixRens.Core.实体;
 using YiJingFramework.StemsAndBranches;
 using 三传取法;
-using SixRens.Core;
-using SixRens.Core.工具.年月日时;
 
 namespace 三传变化测试
 {

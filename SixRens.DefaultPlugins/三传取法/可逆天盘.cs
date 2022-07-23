@@ -24,7 +24,7 @@ namespace 三传取法
 
         public EarthlyBranch 取所乘神(EarthlyBranch 地盘支)
         {
-            return 天盘.取天神(地盘支);
+            return this.天盘.取天神(地盘支);
         }
         public EarthlyBranch 取所临神(EarthlyBranch 天神)
         {

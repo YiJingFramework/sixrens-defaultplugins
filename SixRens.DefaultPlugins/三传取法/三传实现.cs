@@ -12,7 +12,7 @@ namespace 三传取法
             this.四课 = 四课;
             this.天地盘 = 天地盘;
             if (立即计算)
-                重新计算();
+                this.重新计算();
         }
 
         public EarthlyBranch 初传 { get; private set; }
