@@ -8,11 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SixRens.Core" Version="1.7.3" />
+    <PackageReference Include="SixRens.Core" Version="1.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SixRens.DefaultPlugins\SixRens.DefaultPlugins.csproj" />
+    <ProjectReference Include="..\控制台效果测试插件法\控制台效果测试插件法.csproj" />
   </ItemGroup>
 
 </Project>

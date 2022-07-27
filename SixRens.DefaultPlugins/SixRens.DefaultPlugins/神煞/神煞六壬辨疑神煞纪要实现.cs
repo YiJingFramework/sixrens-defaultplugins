@@ -629,10 +629,10 @@ namespace SixRens.DefaultPlugins.神煞
             取神煞法列表.Keys.Concat(取多神煞法列表.Keys)
             .Select(神煞名 => new 神煞题目(神煞名));
 
-        public static I神煞内容 取煞(I年月日时 年月日时, I神煞题目 题目)
+        public static I神煞内容 取煞(I年月日时 年月日时, string 神煞名)
         {
             壬式 式 = new(年月日时);
-            if (取神煞法列表.TryGetValue(题目.神煞名, out var 取单法))
+            if (取神煞法列表.TryGetValue(神煞名, out var 取单法))
             {
                 var 结果 = 取单法(式);
                 if (结果.HasValue)
@@ -641,13 +641,13 @@ namespace SixRens.DefaultPlugins.神煞
                     return new 神煞内容(Array.Empty<EarthlyBranch>());
             }
 
-            if (取多神煞法列表.TryGetValue(题目.神煞名, out var 取多法))
+            if (取多神煞法列表.TryGetValue(神煞名, out var 取多法))
             {
                 var 结果 = 取多法(式);
                 return new 神煞内容(Array.AsReadOnly(结果));
             }
 
-            throw new 起课失败异常($"不支持的神煞题目：{题目.神煞名}");
+            throw new 起课失败异常($"不支持的神煞题目：{神煞名}");
         }
     }
 }

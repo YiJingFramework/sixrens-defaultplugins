@@ -1,12 +1,15 @@
-﻿using SixRens.Api.实体;
+﻿using SixRens.Api;
+using SixRens.Api.实体;
 using SixRens.Api.工具;
 using SixRens.Core;
-using SixRens.Core.实体;
-using SixRens.Core.工具.名称转换;
-using SixRens.Core.工具.插件管理;
+using SixRens.Core.壬式生成;
+using SixRens.Core.年月日时;
+using SixRens.Core.插件管理;
 using System.Diagnostics;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
+using static SixRens.Core.插件管理.经过解析的预设;
+using SixRens.Core.名称转换;
 
 namespace 控制台效果测试插件法
 {
@@ -41,37 +44,37 @@ namespace 控制台效果测试插件法
         public static void Main()
         {
             var 插件包 = 加载插件包();
-            var time = new DateTime(2022, 2, 24, 22, 00, 0);
-            I年月日时信息 年月日时 = new 真实年月日时(time);
 
-            壬式 壬式 = new 壬式(年月日时,
-                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
-                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
+            var 预设 = new 经过解析的预设(
                 插件包.地盘插件[0],
                 插件包.天盘插件[0],
                 插件包.四课插件[0],
                 插件包.三传插件[0],
                 插件包.天将插件[0],
                 插件包.年命插件[0],
-                插件包.神煞插件,
-                插件包.课体插件,
+                插件包.神煞插件.Select(
+                    c => new 实体题目表和所属插件<I神煞插件>(c, c.支持的神煞.Select(s=>s.神煞名))),
+                插件包.课体插件.Select(
+                    c => new 实体题目表和所属插件<I课体插件>(c, c.支持的课体.Select(s => s.课体名))),
                 插件包.参考插件);
-            测试(壬式);
+
+            测试(预设);
             Console.WriteLine("============");
 
-            壬式 = new 壬式(年月日时,
-                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
-                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
+            预设 = 预设 = new 经过解析的预设(
                 插件包.地盘插件[0],
                 插件包.天盘插件[0],
                 插件包.四课插件[0],
                 插件包.三传插件[1],
                 插件包.天将插件[0],
                 插件包.年命插件[0],
-                插件包.神煞插件,
-                插件包.课体插件,
+                插件包.神煞插件.Select(
+                    c => new 实体题目表和所属插件<I神煞插件>(c, c.支持的神煞.Select(s => s.神煞名))),
+                插件包.课体插件.Select(
+                    c => new 实体题目表和所属插件<I课体插件>(c, c.支持的课体.Select(s => s.课体名))),
                 插件包.参考插件);
-            测试(壬式);
+
+            测试(预设);
             _ = Console.ReadLine();
         }
 
@@ -81,10 +84,21 @@ namespace 控制台效果测试插件法
             var 包路径 = Console.ReadLine();
             Debug.Assert(包路径 is not null);
             using var 插件包流 = File.OpenRead(包路径);
-            return new 插件包(插件包流);
+            var 插件包 = new 插件包管理器(new("temp")).从外部加载插件包(插件包流);
+            Debug.Assert(插件包 is not null);
+            return 插件包;
         }
-        private static void 测试(壬式 壬式)
+
+        public static void 测试(经过解析的预设 预设)
         {
+            // var time = new DateTime(2022, 2, 24, 22, 00, 0);
+            var time = DateTime.Now;
+            I年月日时信息 年月日时 = new 真实年月日时(time);
+
+            壬式 壬式 = new 壬式(年月日时,
+                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
+                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
+                预设);
             打印年月日时(壬式);
             打印年命(壬式);
             打印三传(壬式);
@@ -128,10 +142,10 @@ namespace 控制台效果测试插件法
             string 生成字符串(EarthlyBranch 支)
             {
                 var 旬 = 壬式.年月日时.旬所在;
-                var 落空 = 旬.获取对应天干(壬式.取所临神(支)).HasValue ? $"{空格}{空格}" : "落空";
+                var 落空 = 旬.获取对应天干(壬式.取上神(支)).HasValue ? $"{空格}{空格}" : "落空";
                 var 六亲 = 壬式.年月日时.日干.判断六亲(支);
                 var 遁干 = 旬.获取对应天干(支)?.ToString("C") ?? 空格;
-                var 天将 = 壬式.取所乘将(支).简称();
+                var 天将 = 壬式.取乘将(支).简称();
                 return $"{落空}{空格}{六亲}{空格}{遁干}{支:C}{天将}";
             }
 
@@ -145,10 +159,10 @@ namespace 控制台效果测试插件法
         }
         private static void 打印四课(壬式 壬式)
         {
-            Console.WriteLine($"{壬式.取所乘将(壬式.四课.辰阴).简称()}" +
-                $"{壬式.取所乘将(壬式.四课.辰阳).简称()}" +
-                $"{壬式.取所乘将(壬式.四课.日阴).简称()}" +
-                $"{壬式.取所乘将(壬式.四课.日阳).简称()}");
+            Console.WriteLine($"{壬式.取乘将(壬式.四课.辰阴).简称()}" +
+                $"{壬式.取乘将(壬式.四课.辰阳).简称()}" +
+                $"{壬式.取乘将(壬式.四课.日阴).简称()}" +
+                $"{壬式.取乘将(壬式.四课.日阳).简称()}");
             Console.WriteLine($"{壬式.四课.辰阴:C}{壬式.四课.辰阳:C}" +
                 $"{壬式.四课.日阴:C}{壬式.四课.日阳:C}");
             Console.WriteLine($"{壬式.四课.辰阳:C}{壬式.四课.辰:C}" +
@@ -160,14 +174,14 @@ namespace 控制台效果测试插件法
             var branches = Enumerable.Range(1, 12)
                 .ToDictionary(item => item, item => new EarthlyBranch(item));
 
-            Console.WriteLine($"{壬式.取所乘神(branches[6]):C}{壬式.取所乘神(branches[7]):C}" +
-                $"{壬式.取所乘神(branches[8]):C}{壬式.取所乘神(branches[9]):C}");
-            Console.WriteLine($"{壬式.取所乘神(branches[5]):C}{空格}{空格}" +
-                $"{壬式.取所乘神(branches[10]):C}");
-            Console.WriteLine($"{壬式.取所乘神(branches[4]):C}{空格}{空格}" +
-                $"{壬式.取所乘神(branches[11]):C}");
-            Console.WriteLine($"{壬式.取所乘神(branches[3]):C}{壬式.取所乘神(branches[2]):C}" +
-                $"{壬式.取所乘神(branches[1]):C}{壬式.取所乘神(branches[12]):C}");
+            Console.WriteLine($"{壬式.取上神(branches[6]):C}{壬式.取上神(branches[7]):C}" +
+                $"{壬式.取上神(branches[8]):C}{壬式.取上神(branches[9]):C}");
+            Console.WriteLine($"{壬式.取上神(branches[5]):C}{空格}{空格}" +
+                $"{壬式.取上神(branches[10]):C}");
+            Console.WriteLine($"{壬式.取上神(branches[4]):C}{空格}{空格}" +
+                $"{壬式.取上神(branches[11]):C}");
+            Console.WriteLine($"{壬式.取上神(branches[3]):C}{壬式.取上神(branches[2]):C}" +
+                $"{壬式.取上神(branches[1]):C}{壬式.取上神(branches[12]):C}");
             Console.WriteLine();
         }
     }
