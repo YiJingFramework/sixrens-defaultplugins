@@ -1,6 +1,5 @@
 ﻿using com.nlf.calendar;
 using SixRens.Api;
-using SixRens.Core;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
 using SixRens.Core.插件管理;
@@ -42,8 +41,8 @@ for (int i = 0; i < 60; i++)
             new 三传插件(),
             new 天将甲戊庚牛羊壬癸蛇兔藏(),
             new 年命默认(),
-            Array.Empty<实体题目表和所属插件<I神煞插件>>(),
-            Array.Empty<实体题目表和所属插件<I课体插件>>(),
+            Array.Empty<实体题目和所属插件<I神煞插件>>(),
+            Array.Empty<实体题目和所属插件<I课体插件>>(),
             Array.Empty<I参考插件>());
 
         var 式 = new 壬式(年月日时,

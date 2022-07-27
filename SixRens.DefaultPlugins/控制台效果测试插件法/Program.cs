@@ -1,7 +1,7 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
 using SixRens.Api.工具;
-using SixRens.Core;
+using SixRens.Core.名称转换;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
 using SixRens.Core.插件管理;
@@ -9,7 +9,6 @@ using System.Diagnostics;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
 using static SixRens.Core.插件管理.经过解析的预设;
-using SixRens.Core.名称转换;
 
 namespace 控制台效果测试插件法
 {
@@ -52,10 +51,10 @@ namespace 控制台效果测试插件法
                 插件包.三传插件[0],
                 插件包.天将插件[0],
                 插件包.年命插件[0],
-                插件包.神煞插件.Select(
-                    c => new 实体题目表和所属插件<I神煞插件>(c, c.支持的神煞.Select(s=>s.神煞名))),
-                插件包.课体插件.Select(
-                    c => new 实体题目表和所属插件<I课体插件>(c, c.支持的课体.Select(s => s.课体名))),
+                插件包.神煞插件.SelectMany(c => c.支持的神煞,
+                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s.神煞名)),
+                插件包.课体插件.SelectMany(c => c.支持的课体,
+                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s.课体名)),
                 插件包.参考插件);
 
             测试(预设);
@@ -68,10 +67,10 @@ namespace 控制台效果测试插件法
                 插件包.三传插件[1],
                 插件包.天将插件[0],
                 插件包.年命插件[0],
-                插件包.神煞插件.Select(
-                    c => new 实体题目表和所属插件<I神煞插件>(c, c.支持的神煞.Select(s => s.神煞名))),
-                插件包.课体插件.Select(
-                    c => new 实体题目表和所属插件<I课体插件>(c, c.支持的课体.Select(s => s.课体名))),
+                插件包.神煞插件.SelectMany(c => c.支持的神煞,
+                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s.神煞名)),
+                插件包.课体插件.SelectMany(c => c.支持的课体,
+                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s.课体名)),
                 插件包.参考插件);
 
             测试(预设);
@@ -84,7 +83,9 @@ namespace 控制台效果测试插件法
             var 包路径 = Console.ReadLine();
             Debug.Assert(包路径 is not null);
             using var 插件包流 = File.OpenRead(包路径);
-            var 插件包 = new 插件包管理器(new("temp")).从外部加载插件包(插件包流);
+            DirectoryInfo directoryInfo = new("temp");
+            directoryInfo.Delete(true);
+            var 插件包 = new 插件包管理器(directoryInfo).从外部加载插件包(插件包流);
             Debug.Assert(插件包 is not null);
             return 插件包;
         }
@@ -99,14 +100,7 @@ namespace 控制台效果测试插件法
                 new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
                 new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
                 预设);
-            打印年月日时(壬式);
-            打印年命(壬式);
-            打印三传(壬式);
-            打印四课(壬式);
-            打印天盘(壬式);
-            打印课体(壬式);
-            试打印神煞(壬式);
-            打印参考(壬式);
+            Console.WriteLine(壬式.创建占例().可读文本化());
         }
 
         private static void 打印年月日时(壬式 壬式)
