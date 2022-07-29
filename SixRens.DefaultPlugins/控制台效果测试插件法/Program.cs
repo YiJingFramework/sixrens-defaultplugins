@@ -5,10 +5,12 @@ using SixRens.Core.名称转换;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
 using SixRens.Core.插件管理;
+using SixRens.Core.插件管理.插件包管理;
+using SixRens.Core.插件管理.预设管理;
 using System.Diagnostics;
 using YiJingFramework.Core;
 using YiJingFramework.StemsAndBranches;
-using static SixRens.Core.插件管理.经过解析的预设;
+using static SixRens.Core.插件管理.预设管理.经过解析的预设;
 
 namespace 控制台效果测试插件法
 {
@@ -83,9 +85,7 @@ namespace 控制台效果测试插件法
             var 包路径 = Console.ReadLine();
             Debug.Assert(包路径 is not null);
             using var 插件包流 = File.OpenRead(包路径);
-            DirectoryInfo directoryInfo = new("temp");
-            directoryInfo.Delete(true);
-            var 插件包 = new 插件包管理器(directoryInfo).从外部加载插件包(插件包流);
+            var 插件包 = new 插件包管理器(new 存储器()).从外部加载插件包(插件包流);
             Debug.Assert(插件包 is not null);
             return 插件包;
         }

@@ -3,6 +3,7 @@ using SixRens.Api;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
 using SixRens.Core.插件管理;
+using SixRens.Core.插件管理.预设管理;
 using SixRens.DefaultPlugins.三传;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
@@ -10,7 +11,7 @@ using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
 using YiJingFramework.StemsAndBranches;
-using static SixRens.Core.插件管理.经过解析的预设;
+using static SixRens.Core.插件管理.预设管理.经过解析的预设;
 
 namespace 三传生成检测
 {

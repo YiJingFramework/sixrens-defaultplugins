@@ -3,6 +3,7 @@ using SixRens.Api;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
 using SixRens.Core.插件管理;
+using SixRens.Core.插件管理.预设管理;
 using SixRens.DefaultPlugins.四课;
 using SixRens.DefaultPlugins.地盘;
 using SixRens.DefaultPlugins.天将;
@@ -11,7 +12,7 @@ using SixRens.DefaultPlugins.年命;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 using 三传取法;
-using static SixRens.Core.插件管理.经过解析的预设;
+using static SixRens.Core.插件管理.预设管理.经过解析的预设;
 
 int GenerateKey(HeavenlyStem 日, EarthlyBranch 辰, EarthlyBranch 子所乘)
 {

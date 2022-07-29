@@ -1,5 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Core.插件管理;
+using SixRens.Core.插件管理.预设管理;
 using SixRens.DefaultPlugins.三传;
 using SixRens.DefaultPlugins.参考;
 using SixRens.DefaultPlugins.四课;
@@ -9,7 +10,7 @@ using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
 using SixRens.DefaultPlugins.神煞;
 using SixRens.DefaultPlugins.课体;
-using static SixRens.Core.插件管理.经过解析的预设;
+using static SixRens.Core.插件管理.预设管理.经过解析的预设;
 
 namespace 控制台效果测试
 {
