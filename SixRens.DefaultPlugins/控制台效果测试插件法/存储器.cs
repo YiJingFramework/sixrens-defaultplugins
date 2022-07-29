@@ -14,7 +14,7 @@ namespace 控制台效果测试插件法
             return;
         }
 
-        public string 生成新的插件包名()
+        public string 生成新的插件包文件名()
         {
             return Path.GetRandomFileName();
         }
@@ -24,7 +24,7 @@ namespace 控制台效果测试插件法
             return;
         }
 
-        public IEnumerable<(string 插件包名, Stream 插件包)> 获取所有插件包文件()
+        public IEnumerable<(string, Stream)> 获取所有插件包文件()
         {
             yield break;
         }
