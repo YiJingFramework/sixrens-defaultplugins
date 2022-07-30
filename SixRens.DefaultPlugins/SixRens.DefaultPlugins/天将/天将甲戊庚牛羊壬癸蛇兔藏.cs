@@ -11,7 +11,7 @@ namespace SixRens.DefaultPlugins.天将
 
         public Guid 插件识别码 => new Guid("006CD940-0597-4E02-A707-0D54D4216C1A");
 
-        public I天将盘 获取天将盘(I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课, I三传 三传)
+        public I天将盘 获取天将盘(Guid 壬式识别码, I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课, I三传 三传)
         {
             return new 天将甲戊庚牛羊壬癸蛇兔藏实现(年月日时, new 可逆天盘(天盘));
         }

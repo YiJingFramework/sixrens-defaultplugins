@@ -11,7 +11,7 @@ namespace SixRens.DefaultPlugins.三传
 
         public Guid 插件识别码 => new Guid("F53253DC-099B-412A-8B14-6C59BE64DA38");
 
-        public I三传 获取三传(I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课)
+        public I三传 获取三传(Guid 壬式识别码, I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课)
         {
             return new 三传涉害深浅计算式实现(四课, new 可逆天盘(天盘));
         }

@@ -10,7 +10,7 @@ namespace SixRens.DefaultPlugins.地盘
 
         public Guid 插件识别码 => new Guid("A9B377C9-8A25-4476-95C9-7BA90D075A5E");
 
-        public I地盘 获取地盘(I年月日时 年月日时)
+        public I地盘 获取地盘(Guid 壬式识别码, I年月日时 年月日时)
         {
             return new 地盘默认实现();
         }
