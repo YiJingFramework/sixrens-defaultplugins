@@ -1,13 +1,13 @@
 ﻿using SixRens.Api.实体;
 using SixRens.Api.实体.壬式;
-using SixRens.DefaultPlugins.工具;
 using YiJingFramework.StemsAndBranches;
+using static SixRens.Api.工具.天盘扩展;
 
 namespace SixRens.DefaultPlugins.天将
 {
     internal sealed class 天将甲戊庚牛羊壬癸蛇兔藏实现 : I天将盘
     {
-        internal 天将甲戊庚牛羊壬癸蛇兔藏实现(I年月日时 年月日时, 可逆天盘 天地盘)
+        internal 天将甲戊庚牛羊壬癸蛇兔藏实现(I年月日时 年月日时, 完全可逆天盘 天地盘)
         {
             this.贵人序号 = 年月日时.日干.Index switch {
                 // 甲戊庚牛羊
@@ -22,7 +22,7 @@ namespace SixRens.DefaultPlugins.天将
                 _ => 年月日时.昼占 ? 7 : 3 // 7 or 8
                 // 此是贵人方
             };
-            var 临神 = 天地盘.取所临神(new EarthlyBranch(this.贵人序号));
+            var 临神 = 天地盘.取临地(new EarthlyBranch(this.贵人序号));
             this.顺逆 = 临神.Index is >= 6 and < 12 ? -1 : 1;
         }
 

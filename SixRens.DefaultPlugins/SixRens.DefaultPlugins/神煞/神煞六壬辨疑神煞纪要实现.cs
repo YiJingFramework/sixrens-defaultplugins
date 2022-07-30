@@ -622,7 +622,7 @@ namespace SixRens.DefaultPlugins.神煞
             string 神煞名) : I神煞题目
         { }
         private sealed record 神煞内容(
-            IReadOnlyList<EarthlyBranch> 所在神) : I神煞内容
+            IEnumerable<EarthlyBranch> 所在神) : I神煞内容
         { }
 
         public static IEnumerable<I神煞题目> 支持的神煞 =>

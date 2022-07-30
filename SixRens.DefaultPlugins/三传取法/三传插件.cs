@@ -1,6 +1,7 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
 using SixRens.Api.实体.壬式;
+using SixRens.Api.工具;
 
 namespace 三传取法
 {
@@ -12,7 +13,7 @@ namespace 三传取法
 
         public I三传 获取三传(Guid 壬式识别码, I年月日时 年月日时, I地盘 地盘, I天盘 天盘, I四课 四课)
         {
-            return new 三传实现(四课, new 可逆天盘(天盘));
+            return new 三传实现(四课, 天盘.完全可逆化(true));
         }
     }
 }

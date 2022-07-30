@@ -11,6 +11,7 @@ using SixRens.DefaultPlugins.天将;
 using SixRens.DefaultPlugins.天盘;
 using SixRens.DefaultPlugins.年命;
 using YiJingFramework.StemsAndBranches;
+using 三传取法;
 using static SixRens.Core.插件管理.预设管理.经过解析的预设;
 
 namespace 三传生成检测
@@ -35,8 +36,8 @@ namespace 三传生成检测
                         new 天盘月将加时(),
                         new 四课默认(),
                         // new 三传涉害深浅打表式(),
-                        new 三传涉害深浅计算式(),
-                        // new 三传插件(),
+                        // new 三传涉害深浅计算式(),
+                        new 三传插件(),
                         new 天将甲戊庚牛羊壬癸蛇兔藏(),
                         new 年命默认(),
                         Array.Empty<实体题目和所属插件<I神煞插件>>(),

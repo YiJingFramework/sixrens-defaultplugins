@@ -1,7 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
 using SixRens.Api.实体.壬式;
-using SixRens.DefaultPlugins.工具;
 
 namespace SixRens.DefaultPlugins.四课
 {
@@ -13,7 +12,7 @@ namespace SixRens.DefaultPlugins.四课
 
         public I四课 获取四课(Guid 壬式识别码, I年月日时 年月日时, I地盘 地盘, I天盘 天盘)
         {
-            return new 四课默认实现(年月日时, new 可逆天盘(天盘));
+            return new 四课默认实现(年月日时, 天盘);
         }
     }
 }
