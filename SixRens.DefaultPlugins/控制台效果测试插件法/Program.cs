@@ -21,32 +21,24 @@ namespace 控制台效果测试插件法
             var 插件包 = 加载插件包();
 
             var 预设 = new 经过解析的预设(
-                插件包.地盘插件[0],
-                插件包.天盘插件[0],
-                插件包.四课插件[0],
                 插件包.三传插件[0],
                 插件包.天将插件[0],
-                插件包.年命插件[0],
-                插件包.神煞插件.SelectMany(c => c.支持的神煞,
-                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s.神煞名)),
+                插件包.神煞插件.SelectMany(c => c.支持神煞的名称,
+                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s)),
                 插件包.课体插件.SelectMany(c => c.支持的课体,
-                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s.课体名)),
+                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s)),
                 插件包.参考插件);
 
             测试(预设);
             Console.WriteLine("============");
 
             预设 = 预设 = new 经过解析的预设(
-                插件包.地盘插件[0],
-                插件包.天盘插件[0],
-                插件包.四课插件[0],
                 插件包.三传插件[1],
                 插件包.天将插件[0],
-                插件包.年命插件[0],
-                插件包.神煞插件.SelectMany(c => c.支持的神煞,
-                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s.神煞名)),
+                插件包.神煞插件.SelectMany(c => c.支持神煞的名称,
+                    (c, s) => new 实体题目和所属插件<I神煞插件>(c, s)),
                 插件包.课体插件.SelectMany(c => c.支持的课体,
-                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s.课体名)),
+                    (c, s) => new 实体题目和所属插件<I课体插件>(c, s)),
                 插件包.参考插件);
 
             测试(预设);
@@ -70,9 +62,9 @@ namespace 控制台效果测试插件法
             var time = DateTime.Now;
             I年月日时信息 年月日时 = new 真实年月日时(time);
 
-            壬式 壬式 = new 壬式(年月日时,
-                new 本命信息(YinYang.Yang, new EarthlyBranch(7)),
-                new[] { new 本命信息(YinYang.Yin, new EarthlyBranch(8)) },
+            壬式 壬式 = new 壬式(new(年月日时,
+                new 年命(YinYang.Yang, new EarthlyBranch(7), 年月日时),
+                new[] { new 年命(YinYang.Yin, new EarthlyBranch(8), 年月日时) }),
                 预设);
             Console.WriteLine(壬式.创建占例().可读文本化());
         }

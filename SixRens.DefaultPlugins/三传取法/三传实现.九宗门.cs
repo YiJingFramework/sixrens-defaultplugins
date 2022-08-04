@@ -127,7 +127,7 @@ namespace 三传取法
                 var 日阴阳 = 四课[1 - 1].下阴阳;
                 if (日阴阳.IsYang)
                 {
-                    this.初传 = this.天地盘.取上神(酉);
+                    this.初传 = this.天地盘.取乘神(酉);
                     this.中传 = 四课[3 - 1].上;
                     this.末传 = 四课[1 - 1].上;
                     return;
@@ -233,7 +233,7 @@ namespace 三传取法
                     var 日 = 四课[1 - 1].干下;
                     Debug.Assert(日.HasValue);
 
-                    this.初传 = this.天地盘.取上神(日.Value.取所合干().寄宫());
+                    this.初传 = this.天地盘.取乘神(日.Value.取所合干().寄宫());
                     return;
                 }
 
@@ -433,8 +433,8 @@ namespace 三传取法
         private void 以初传其乘再乘设三传(EarthlyBranch 初传)
         {
             this.初传 = 初传;
-            this.中传 = this.天地盘.取上神(初传);
-            this.末传 = this.天地盘.取上神(this.中传);
+            this.中传 = this.天地盘.取乘神(初传);
+            this.末传 = this.天地盘.取乘神(this.中传);
         }
         private IReadOnlyList<四课之一> 取贼或无贼取克(
             IEnumerable<四课之一> 各课, out bool 有贼否)

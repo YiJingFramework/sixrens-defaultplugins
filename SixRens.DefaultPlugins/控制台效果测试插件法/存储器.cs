@@ -28,5 +28,10 @@ namespace 控制台效果测试插件法
         {
             yield break;
         }
+
+        public Stream? 获取插件包文件(string 插件包文件名)
+        {
+            return null;
+        }
     }
 }

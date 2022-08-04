@@ -1,18 +1,19 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
+using SixRens.Api.实体.起课信息;
 using SixRens.Api.工具;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.神煞
 {
-    internal static class 神煞六壬辨疑神煞纪要实现
+    internal class 神煞六壬辨疑神煞纪要实现 : I神煞插件.I神煞内容提供器
     {
-        private sealed record 壬式(I年月日时 年月日时);
+        private sealed record 壬式信息(I年月日时 年月日时);
 
-        private delegate EarthlyBranch? 取神煞法(壬式 式);
+        private delegate EarthlyBranch? 取神煞法(壬式信息 式);
 
-        private delegate EarthlyBranch[] 取多神煞法(壬式 式);
+        private delegate EarthlyBranch[] 取多神煞法(壬式信息 式);
 
         private static class 取神煞方法
         {
@@ -618,33 +619,31 @@ namespace SixRens.DefaultPlugins.神煞
             }
         }
 
-        private sealed record 神煞题目(
-            string 神煞名) : I神煞题目
-        { }
-        private sealed record 神煞内容(
-            IEnumerable<EarthlyBranch> 所在神) : I神煞内容
-        { }
+        public static IEnumerable<string> 支持的神煞 =>
+            取神煞法列表.Keys.Concat(取多神煞法列表.Keys);
 
-        public static IEnumerable<I神煞题目> 支持的神煞 =>
-            取神煞法列表.Keys.Concat(取多神煞法列表.Keys)
-            .Select(神煞名 => new 神煞题目(神煞名));
+        private readonly 壬式信息 壬式;
 
-        public static I神煞内容 取煞(I年月日时 年月日时, string 神煞名)
+        internal 神煞六壬辨疑神煞纪要实现(I年月日时 年月日时)
         {
-            壬式 式 = new(年月日时);
+            this.壬式 = new(年月日时);
+        }
+        
+        public IEnumerable<EarthlyBranch> 取所在神(string 神煞名)
+        {
             if (取神煞法列表.TryGetValue(神煞名, out var 取单法))
             {
-                var 结果 = 取单法(式);
+                var 结果 = 取单法(this.壬式);
                 if (结果.HasValue)
-                    return new 神煞内容(Array.AsReadOnly(new[] { 结果.Value }));
+                    return new[] { 结果.Value };
                 else
-                    return new 神煞内容(Array.Empty<EarthlyBranch>());
+                    return Array.Empty<EarthlyBranch>();
             }
 
             if (取多神煞法列表.TryGetValue(神煞名, out var 取多法))
             {
-                var 结果 = 取多法(式);
-                return new 神煞内容(Array.AsReadOnly(结果));
+                var 结果 = 取多法(this.壬式);
+                return 结果;
             }
 
             throw new 起课失败异常($"不支持的神煞题目：{神煞名}");
