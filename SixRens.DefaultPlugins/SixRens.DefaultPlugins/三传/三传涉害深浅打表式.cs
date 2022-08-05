@@ -2,7 +2,6 @@
 using SixRens.Api.实体;
 using SixRens.Api.实体.壬式;
 using SixRens.Api.实体.起课信息;
-using SixRens.Api.工具;
 
 namespace SixRens.DefaultPlugins.三传
 {

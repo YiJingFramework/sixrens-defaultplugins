@@ -9,7 +9,7 @@
             主程序集: $"SixRens.DefaultPlugins.dll",
             插件类: new Type[] {
                typeof(SixRens.DefaultPlugins.三传.三传涉害深浅打表式),
-               typeof(SixRens.DefaultPlugins.三传.三传涉害深浅计算式),
+               // typeof(SixRens.DefaultPlugins.三传.三传涉害深浅计算式),
                typeof(SixRens.DefaultPlugins.天将.天将甲戊庚牛羊壬癸蛇兔藏),
                typeof(SixRens.DefaultPlugins.神煞.神煞六壬辨疑神煞纪要),
                typeof(SixRens.DefaultPlugins.课体.课体六壬辨疑),
@@ -17,7 +17,11 @@
             });
         public static readonly string[] 包含的程序集 = new[]
         {
-            "SixRens.DefaultPlugins.dll"
+            "SixRens.DefaultPlugins.dll",
+            "SixRens.Tools.dll",
+            "SixRens.DefaultPlugins.dll",
+            "YiJingFramework.Core.dll",
+            "YiJingFramework.FiveElements.dll"
         };
     }
 }

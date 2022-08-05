@@ -13,7 +13,7 @@ namespace SixRens.DefaultPlugins.三传
 
         public I三传 获取三传(I起课信息 起课信息, I天地盘 天地盘, I四课 四课)
         {
-            return new 三传涉害深浅打表式实现(四课, 天地盘);
+            return new 三传涉害深浅计算式实现(四课, 天地盘);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
-using SixRens.Api.工具;
 using SixRens.Core.名称转换;
 using SixRens.Core.壬式生成;
 using SixRens.Core.年月日时;
@@ -32,6 +31,7 @@ namespace 控制台效果测试插件法
             测试(预设);
             Console.WriteLine("============");
 
+            /*
             预设 = 预设 = new 经过解析的预设(
                 插件包.三传插件[1],
                 插件包.天将插件[0],
@@ -42,6 +42,8 @@ namespace 控制台效果测试插件法
                 插件包.参考插件);
 
             测试(预设);
+            */
+
             _ = Console.ReadLine();
         }
 
@@ -63,8 +65,8 @@ namespace 控制台效果测试插件法
             I年月日时信息 年月日时 = new 真实年月日时(time);
 
             壬式 壬式 = new 壬式(new(年月日时,
-                new 年命(YinYang.Yang, new EarthlyBranch(7), 年月日时),
-                new[] { new 年命(YinYang.Yin, new EarthlyBranch(8), 年月日时) }),
+                new 年命(性别.男, new EarthlyBranch(7), 年月日时),
+                new[] { new 年命(性别.女, new EarthlyBranch(8), 年月日时) }),
                 预设);
             Console.WriteLine(壬式.创建占例().可读文本化());
         }

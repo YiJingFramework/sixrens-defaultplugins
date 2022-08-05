@@ -1,6 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体.壬式;
-using SixRens.Api.工具;
+using SixRens.Tools;
 using YiJingFramework.FiveElements;
 
 namespace SixRens.DefaultPlugins.课体
@@ -159,6 +159,9 @@ namespace SixRens.DefaultPlugins.课体
                 if (取遥克课(式, 存).Count is not 0)
                     return false;
 
+                if (伏吟(式, 存))
+                    return false;
+
                 var 四课 = 取四课(式, 存);
                 return 四课[0].支下或干下之寄宫 == 四课[2].支下或干下之寄宫;
             }
@@ -176,6 +179,9 @@ namespace SixRens.DefaultPlugins.课体
                 var 四课 = 取四课(式, 存);
                 return 四课[0].上 == 四课[0].支下或干下之寄宫.取冲();
             }
+            #endregion
+
+            #region 卷三
             #endregion
         }
     }

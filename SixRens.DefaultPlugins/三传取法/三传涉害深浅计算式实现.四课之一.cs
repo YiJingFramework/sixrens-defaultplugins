@@ -1,11 +1,11 @@
-﻿using SixRens.Api.工具;
+﻿using SixRens.Tools;
 using YiJingFramework.Core;
 using YiJingFramework.FiveElements;
 using YiJingFramework.StemsAndBranches;
 
-namespace 三传取法
+namespace SixRens.DefaultPlugins.三传
 {
-    internal partial class 三传实现
+    internal partial class 三传涉害深浅计算式实现
     {
         private sealed class 四课之一
         {

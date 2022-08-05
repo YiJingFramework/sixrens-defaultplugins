@@ -1,6 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
-using SixRens.Api.工具;
+using SixRens.Tools;
 using System.Diagnostics;
 using YiJingFramework.Core;
 using YiJingFramework.FiveElements;
