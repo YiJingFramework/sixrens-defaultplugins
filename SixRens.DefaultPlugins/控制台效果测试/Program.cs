@@ -20,7 +20,7 @@ namespace 控制台效果测试
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
                 new[] { new 神煞六壬辨疑神煞纪要() }.SelectMany(c => c.支持神煞的名称,
                     (c, s) => new 实体题目和所属插件<I神煞插件>(c, s)),
-                new[] { new 课体测试() }.SelectMany(c => c.支持的课体,
+                new[] { new 课体六壬辨疑() }.SelectMany(c => c.支持的课体,
                     (c, s) => new 实体题目和所属插件<I课体插件>(c, s)),
                 new[] { new 参考测试() });
             控制台效果测试插件法.Program.测试(预设);
