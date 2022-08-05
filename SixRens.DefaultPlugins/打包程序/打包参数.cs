@@ -19,7 +19,6 @@
         {
             "SixRens.DefaultPlugins.dll",
             "SixRens.Tools.dll",
-            "SixRens.DefaultPlugins.dll",
             "YiJingFramework.Core.dll",
             "YiJingFramework.FiveElements.dll"
         };
