@@ -1,6 +1,7 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体.壬式;
 using SixRens.Tools;
+using SixRens.Tools.干支关系扩展;
 using YiJingFramework.FiveElements;
 
 namespace SixRens.DefaultPlugins.课体

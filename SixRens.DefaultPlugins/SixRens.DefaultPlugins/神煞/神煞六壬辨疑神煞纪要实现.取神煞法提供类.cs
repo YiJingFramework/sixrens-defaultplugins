@@ -2,6 +2,11 @@
 using SixRens.Api.实体;
 using SixRens.Api.实体.起课信息;
 using SixRens.Tools;
+using SixRens.Tools.十二长生扩展;
+using SixRens.Tools.四时旺相扩展;
+using SixRens.Tools.孟仲季扩展;
+using SixRens.Tools.干支关系扩展;
+using SixRens.Tools.干支性质扩展;
 using System.Diagnostics;
 using YiJingFramework.StemsAndBranches;
 
@@ -34,7 +39,7 @@ namespace SixRens.DefaultPlugins.神煞
                 var 日干 = 式.年月日时.日干;
                 if (!日干.阴阳().IsYang)
                     日干 = 日干.取所合干();
-                return 日干.以长生取支(十二长生.临官);
+                return 日干.天干以长生取支(十二长生.临官);
             };
             public static 取神煞法 日合 => (式) => {
                 // 日干对宫之神。如甲用己之类。
@@ -113,7 +118,7 @@ namespace SixRens.DefaultPlugins.神煞
             public static 取神煞法 支墓 => (式) => {
                 // 用五行起例。
                 var 日支 = 式.年月日时.日支;
-                return 日支.五行().以长生取支(十二长生.墓);
+                return 日支.五行().五行以长生取支(十二长生.墓);
             };
             public static 取神煞法 支破 => (式) => {
                 // 阳支后三神，阴支前三神。
@@ -194,7 +199,7 @@ namespace SixRens.DefaultPlugins.神煞
             public static 取神煞法 月德 => (式) => {
                 // 巳寅亥申三轮，即三合之禄神。
                 var 月支 = 式.年月日时.月支;
-                return 月支.取所在三合局().合化五行.以长生取支(十二长生.临官);
+                return 月支.取所在三合局().合化五行.五行以长生取支(十二长生.临官);
             };
             public static 取神煞法 生气 => (式) => {
                 // 正月起子顺行。
@@ -471,7 +476,7 @@ namespace SixRens.DefaultPlugins.神煞
             public static 取神煞法 皇书 => (式) => {
                 // 四时临官之神，如春木临官在寅之类。
                 var 时 = 式.年月日时.月支.取所在四时局();
-                return 时.五行.以长生取支(十二长生.临官);
+                return 时.五行.五行以长生取支(十二长生.临官);
             };
             public static 取神煞法 孤辰 => (式) => {
                 // 四时前一位。

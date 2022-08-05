@@ -1,6 +1,10 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体;
 using SixRens.Tools;
+using SixRens.Tools.十二长生扩展;
+using SixRens.Tools.孟仲季扩展;
+using SixRens.Tools.干支关系扩展;
+using SixRens.Tools.干支性质扩展;
 using System.Diagnostics;
 using YiJingFramework.Core;
 using YiJingFramework.FiveElements;

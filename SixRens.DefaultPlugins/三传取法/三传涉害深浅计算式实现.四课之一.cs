@@ -1,4 +1,6 @@
 ﻿using SixRens.Tools;
+using SixRens.Tools.十二长生扩展;
+using SixRens.Tools.干支性质扩展;
 using YiJingFramework.Core;
 using YiJingFramework.FiveElements;
 using YiJingFramework.StemsAndBranches;
