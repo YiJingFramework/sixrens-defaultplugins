@@ -15,7 +15,7 @@ namespace SixRens.DefaultPlugins.课体
 
         public I课体插件.I课体内容提供器 获取课体内容提供器(I起课信息 起课信息, I天地盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘, IReadOnlyList<I神煞> 神煞列表)
         {
-            return new 课体六壬辨疑实现(四课);
+            return new 课体六壬辨疑实现(起课信息, 天盘, 四课, 三传, 天将盘, 神煞列表);
         }
     }
 }

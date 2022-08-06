@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="lunar-csharp" Version="1.2.19" />
-    <PackageReference Include="SixRens.Core" Version="1.15.3" />
+    <PackageReference Include="SixRens.Core" Version="1.16.0" />
   </ItemGroup>
 
   <ItemGroup>

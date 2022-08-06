@@ -1,5 +1,6 @@
 ﻿using SixRens.Api;
 using SixRens.Api.实体.壬式;
+using SixRens.Api.实体.起课信息;
 
 namespace SixRens.DefaultPlugins.课体
 {
@@ -17,9 +18,9 @@ namespace SixRens.DefaultPlugins.课体
 
         private readonly 壬式信息 壬式;
         private readonly 缓存 存;
-        internal 课体六壬辨疑实现(I四课 四课)
+        internal 课体六壬辨疑实现(I起课信息 起课信息, I天地盘 天盘, I四课 四课, I三传 三传, I天将盘 天将盘, IReadOnlyList<I神煞> 神煞列表)
         {
-            this.壬式 = new(四课);
+            this.壬式 = new(起课信息, 天盘, 四课, 三传, 天将盘, 神煞列表);
             this.存 = new();
         }
 

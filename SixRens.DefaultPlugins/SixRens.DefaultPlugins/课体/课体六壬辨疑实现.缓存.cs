@@ -13,6 +13,7 @@ namespace SixRens.DefaultPlugins.课体
             public (IReadOnlyList<四课之一> 课, bool 为贼)? 克课 { get; set; }
             public IReadOnlyList<四课之一>? 遥克课 { get; set; }
             public IReadOnlyList<四课之一>? 不重复四课 { get; set; }
+            public (bool 遵循顺逆, bool 为顺)? 天将顺逆 { get; set; }
         }
     }
 }
