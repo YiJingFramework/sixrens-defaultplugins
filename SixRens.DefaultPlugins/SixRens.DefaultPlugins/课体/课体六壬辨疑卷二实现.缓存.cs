@@ -5,7 +5,7 @@ using SixRens.Api.实体.起课信息;
 
 namespace SixRens.DefaultPlugins.课体
 {
-    internal sealed partial class 课体六壬辨疑实现 : I课体插件.I课体内容提供器
+    internal sealed partial class 课体六壬辨疑卷二实现 : I课体插件.I课体内容提供器
     {
         private sealed class 缓存
         {

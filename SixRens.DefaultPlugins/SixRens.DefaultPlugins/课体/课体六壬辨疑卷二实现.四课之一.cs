@@ -7,7 +7,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.课体
 {
-    internal partial class 课体六壬辨疑实现
+    internal partial class 课体六壬辨疑卷二实现
     {
         private sealed class 四课之一
         {

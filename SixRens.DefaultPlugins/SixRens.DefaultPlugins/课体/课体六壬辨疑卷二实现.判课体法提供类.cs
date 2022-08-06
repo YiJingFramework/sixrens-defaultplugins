@@ -10,7 +10,7 @@ using YiJingFramework.StemsAndBranches;
 
 namespace SixRens.DefaultPlugins.课体
 {
-    internal sealed partial class 课体六壬辨疑实现 : I课体插件.I课体内容提供器
+    internal sealed partial class 课体六壬辨疑卷二实现 : I课体插件.I课体内容提供器
     {
         private sealed record 壬式信息(
             I起课信息 起课信息,
@@ -247,6 +247,7 @@ namespace SixRens.DefaultPlugins.课体
             }
             #endregion
 
+            /*
             #region 卷三
             [判课体法]
             public static bool 三光(壬式信息 式, 缓存 存)
@@ -311,6 +312,7 @@ namespace SixRens.DefaultPlugins.课体
                 return false;
             }
             #endregion
+            */
         }
     }
 }
