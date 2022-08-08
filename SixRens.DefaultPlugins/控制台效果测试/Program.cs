@@ -15,7 +15,7 @@ namespace 控制台效果测试
         public static void Main()
         {
             var 预设 = new 经过解析的预设(
-                new 三传涉害深浅打表式(),
+                new 三传涉害深浅(),
                 // new 三传涉害深浅计算式(),
                 new 天将甲戊庚牛羊壬癸蛇兔藏(),
                 new[] { new 神煞六壬辨疑神煞纪要() }.SelectMany(c => c.支持神煞的名称,

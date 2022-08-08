@@ -4,11 +4,11 @@
     {
         public static readonly 插件包信息 信息 = new(
             名称: "SixRens.DefaultPlugins",
-            版本号: $"{typeof(SixRens.DefaultPlugins.三传.三传涉害深浅打表式).Assembly.GetName().Version?.ToString(3)}",
+            版本号: $"{typeof(SixRens.DefaultPlugins.三传.三传涉害深浅).Assembly.GetName().Version?.ToString(3)}",
             网址: "https://github.com/YiJingFramework/sixrens-defaultplugins.git",
             主程序集: $"SixRens.DefaultPlugins.dll",
             插件类: new Type[] {
-               typeof(SixRens.DefaultPlugins.三传.三传涉害深浅打表式),
+               typeof(SixRens.DefaultPlugins.三传.三传涉害深浅),
                // typeof(SixRens.DefaultPlugins.三传.三传涉害深浅计算式),
                typeof(SixRens.DefaultPlugins.天将.天将甲戊庚牛羊壬癸蛇兔藏),
                typeof(SixRens.DefaultPlugins.神煞.神煞六壬辨疑神煞纪要),
